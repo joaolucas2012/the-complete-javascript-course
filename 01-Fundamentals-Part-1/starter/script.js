@@ -61,3 +61,17 @@ console.log(typeof population);
 console.log(typeof country);
 console.log(typeof language);
 
+
+/* 1. Set the value of 'language' to the language spoken where you live (some
+countries have multiple languages, but just choose one)
+*/
+
+// const language = 'Portuguese';
+
+/* 3. Try to change one of the changed variables now, and observe what happens */
+
+// language = 'Spanish';
+// console.log(language);
+
+// The variable language has already been declared and can't change
+
