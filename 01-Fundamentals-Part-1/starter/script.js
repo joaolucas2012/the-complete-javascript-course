@@ -238,3 +238,34 @@ using the template literal syntax */
 
 ///////////////////////////////////////////////////
 
+//Making Decisions with if else statement
+
+// const johnAge = 19;
+// const sarahAge = 15;
+// const isJohnOldEnough = johnAge >= 18;
+// const isSarahOldEnough = sarahAge >= 18;
+
+// if (isJohnOldEnough) {
+//   console.log(`John can start driving license 🚗`);
+// } else {
+//   const yearsLeft = 18 - johnAge;
+//   console.log(`John is too young... wait for more ${yearsLeft} years 😢`);
+// }
+
+// if (isSarahOldEnough) {
+//   console.log(`Sarah can start driving license 🚗`);
+// } else {
+//   const yearsLeft = 18 - sarahAge;
+//   console.log(`Sarah is too young... wait for more ${yearsLeft} years 😢`);
+// }
+
+// Another example
+// const birthYear = 1998;
+// let century;
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+// console.log(century);
+
