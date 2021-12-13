@@ -95,11 +95,11 @@ const lastName = 'Lucas';
 console.log(firstName + ' ' + lastName);
 
 // Assignment operators 
-let x = 10 + 5; // x = 150
-x += 10 // x = x + 10
-x *= 4 // x = x * 4 = 100
-x++; // x = x + 1
-x--; // x = x - 1
+// let x = 10 + 5; // x = 150
+// x += 10 // x = x + 10
+// x *= 4 // x = x * 4 = 100
+// x++; // x = x + 1
+// x--; // x = x - 1
 
 // Comparison Operators
 console.log(ageJonas > ageSarah); // >, <, >=, <=
@@ -128,6 +128,14 @@ have less people than the average country? */
 /* 5. Based on the variables you created, create a new variable 'description'
 which contains a string with this format: 'Portugal is in Europe, and its 11 million
 people speak portuguese' */
-const description = 'Portuguese is in Europe, and its 11 million people speak portuguese';
-console.log(description);
+// const description = 'Portuguese is in Europe, and its 11 million people speak portuguese';
+// console.log(description);
+
+//Operators precedence
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10
+console.log(x, y);
+
+console.log(x + y / 2);
+console.log((x + y) / 2);
 
