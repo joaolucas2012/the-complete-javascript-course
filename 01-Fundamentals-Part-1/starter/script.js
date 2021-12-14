@@ -150,7 +150,7 @@ people speak portuguese' */
 
 ///////////////////////////////////////////////////
 
-// CODING CHALENGE #10
+// CODING CHALENGE #1
 /* Mark and Johnn are trying to compare their BMI (Body Mass Index), which is calculated using the formula:
 BMI = mass / height ** 2 = mass / (height * height).
 (mass in kg and height in meter).
@@ -269,3 +269,85 @@ using the template literal syntax */
 // }
 // console.log(century);
 
+///////////////////////////////////////////////////
+
+// LECTURE: Taking Decisions: if / else Statements
+
+/* 1. If your country's population is greater that 33 million, log a string like this to the
+console: 'Portugal's population is above average'. Otherwise, log a string like
+'Portugal's population is 22 million below average' (the 22 is the average of 33
+minus the country's population) */
+
+// const countryName = 'Brazil';
+// const countryPopulation = 212.6;
+
+// if (countryPopulation > 33) {
+//   console.log(`${countryName}'s population is ${countryPopulation - 33} million above average.`);
+// } else {
+//   console.log(`${countryName}'s population is ${33 - countryPopulation} million below average.`);
+// }
+
+///////////////////////////////////////////////////
+
+// CODING CHALENGE #2
+
+/* Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+
+1.Print a nice output to the console, saying who has the bigger BMI. The message can be either "John's BMI is higher than John's!" or "Mark's BMI is higher than Mark's!"
+2.Use a template string to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+
+MINT: Use an if else statement 😀*/
+
+// Mark weights 78 kg and is 1.69 m tall.John weights 92 kg and is 1.95 m tall.
+// const markMass = 78;
+// johnMass = 92;
+// markHeight = 1.69;
+// johnHeight = 1.95;
+
+// const markBMI = markMass / markHeight ** 2;
+// const johnBMI = johnMass / johnHeight ** 2;
+// console.log(johnBMI, markBMI);
+
+// // 1
+// if (markBMI > johnBMI) {
+//   console.log(`Mark's BMI is higher than John's!`);
+// } else {
+//   console.log(`John's BMI is higher than Mark's!`);
+// }
+
+// //2
+// if (markBMI > johnBMI) {
+//   console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+// } else {
+//   console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+// }
+
+///////////////////////////////////////////////////
+
+// TYPE CONVERTION
+const inputYear = '1991';
+
+// Convert a string to a number
+console.log(Number(inputYear) + 18);
+console.log(inputYear + 18);
+
+// Convert a number to a string
+console.log(String(23));
+
+///////////////////////////////////////////////////
+
+// TYPE COERSION
+// Javascript converts automatically the value 21 to a string or to a number
+// console.log('I am ' + 21 + ' years old');
+// console.log('23' - '10' - 3);
+// console.log('23' * '2');
+// console.log('23' / '2');
+
+// let n = '1' + 1; //'11'
+// n = n - 1; // 11 = 11 - 1 = 10
+// console.log(n); // 10
+
+// 2 + 3 + 4 + '5'; // '95'
+// '10' - '4' - '3' - 2 + '5'; // '15'
+
+///////////////////////////////////////////////////
