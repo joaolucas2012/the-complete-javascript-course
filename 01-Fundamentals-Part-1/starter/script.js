@@ -474,3 +474,27 @@ have?'); */
 // } else {
 //   console.log('No borders');
 // }
+
+///////////////////////////////////////////////////
+
+// BASIC BOOLEAN LOGIC: THE END, OR & NOT OPERATORS AND
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; //B
+// const shoulDrive = hasDriversLicense && hasGoodVision;
+
+// console.log(hasDriversLicense && hasGoodVision); // true and true = true
+// console.log(hasDriversLicense || hasGoodVision); // true or true = true
+// console.log(!hasDriversLicense); // not
+
+// if (!hasDriversLicense !== true || !hasGoodVision !== true) {
+//   console.log('Someone else should drive');
+// }
+
+// if (shoulDrive) {
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log('Sarah is able to drive');
+// } else if (!hasDriversLicense || !hasGoodVision) {
+//   console.log('Someone else should drive');
+// } else {
+//   console.log('Someone else should drive');
+// }
