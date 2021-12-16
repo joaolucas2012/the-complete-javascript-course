@@ -325,14 +325,14 @@ MINT: Use an if else statement 😀*/
 ///////////////////////////////////////////////////
 
 // TYPE CONVERSION
-const inputYear = '1991';
+// const inputYear = '1991';
 
-// Convert a string to a number
-console.log(Number(inputYear) + 18);
-console.log(inputYear + 18);
+// // Convert a string to a number
+// console.log(Number(inputYear) + 18);
+// console.log(inputYear + 18);
 
-// Convert a number to a string
-console.log(String(23));
+// // Convert a number to a string
+// console.log(String(23));
 
 ///////////////////////////////////////////////////
 
@@ -351,6 +351,18 @@ console.log(String(23));
 // '10' - '4' - '3' - 2 + '5'; // '15'
 
 ///////////////////////////////////////////////////
+
+/*1. Predict the result of these 5 operations without executing them:
+'9' - '5'; --> 4
+'19' - '13' + '17'; --> 617
+'19' - '13' + 17; --> 23
+'123' < 57; --> false
+5 + 6 + '4' + 9 - 4 - 2; --> 1143
+2. Execute the operations to check if you were right */
+
+
+///////////////////////////////////////////////////
+
 
 // 5 falsy values: 0, '', undefined, null, NaN.
 
@@ -374,3 +386,47 @@ console.log(String(23));
 // } else {
 //   console.log('Height is UNDEFINED!');
 // }
+
+///////////////////////////////////////////////////
+
+// EQUALITY Operators
+// const age = 18;
+// const age = '18';
+// if (age === 18) console.log('You just became a adult (strict)');
+
+// if (age == 18) console.log('You just became a adult (loose)');
+
+///////////////////////////////////////////////////
+
+// CATCH USER DATA
+// const favourite = prompt('What is your favourite number?');
+// const favourite = Number(prompt('What is your favourite number?'));
+
+// console.log(favourite);
+// console.log(typeof (favourite));
+
+// WORST WAY
+// if (favourite == 12) { // '12' == 12
+//   console.log(`Cool! ${Number(favourite)} is an amazing number!`);
+//   console.log(typeof (Number(favourite)));
+// }
+
+// BEST WAY
+// if (Number(favourite) === 12) { // '12' === 12
+//   console.log(`Cool! ${Number(favourite)} is an amazing number!`);
+//   console.log(typeof (Number(favourite)));
+// }
+
+// ELSE IF
+// if (Number(favourite) === 12) { // '12' == 12
+//   console.log(`Cool! ${Number(favourite)} is an amazing number!`);
+//   console.log(typeof (Number(favourite)));
+// } else if (Number(favourite) === 7) { // 7 === 7
+//   console.log(`${Number(favourite)} is an amazing number too!`);
+// } else {
+//   console.log(`Ok, ${favourite} was not expected, but that's still cool!`);
+// }
+
+
+// DIFFERENT OPERATOR
+// if (Number(favourite) !== 23) console.log('Why did you choose this number');
