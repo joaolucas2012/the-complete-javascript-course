@@ -324,7 +324,7 @@ MINT: Use an if else statement 😀*/
 
 ///////////////////////////////////////////////////
 
-// TYPE CONVERTION
+// TYPE CONVERSION
 const inputYear = '1991';
 
 // Convert a string to a number
@@ -351,3 +351,26 @@ console.log(String(23));
 // '10' - '4' - '3' - 2 + '5'; // '15'
 
 ///////////////////////////////////////////////////
+
+// 5 falsy values: 0, '', undefined, null, NaN.
+
+// console.log(`0 ->> ${Boolean(0)}`);
+// console.log(`undefined --> ${Boolean(undefined)}`);
+// console.log(`string 'Jonas' --> ${Boolean(`Jonas`)}`);
+// console.log(`Empty object ${Boolean({})}`);
+
+// const money = 0;
+// const money = 100;
+// if (money) {
+//   console.log(`Don't spend it all!`);
+// } else {
+//   console.log(`You should get a job!`);
+// }
+
+// // let height;
+// let height = 100;
+// if (height) {
+//   console.log('YAY! Height is defined!');
+// } else {
+//   console.log('Height is UNDEFINED!');
+// }
