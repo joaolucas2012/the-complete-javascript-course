@@ -498,3 +498,95 @@ have?'); */
 // } else {
 //   console.log('Someone else should drive');
 // }
+
+///////////////////////////////////////////////////
+
+// Coding Challenge #3
+
+/* There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
+Your tasks:
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score)
+*/
+
+/* Test data:
+§ Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110 */
+
+//1 and 2
+// let teamName = 'Dolphins';
+// let firstScore = 96;
+// let secondScore = 108;
+// let thirdScore = 89;
+// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+
+// teamName = 'Koalas';
+// firstScore = 88;
+// secondScore = 91;
+// thirdScore = 110;
+// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+
+// if (KoalasAverageScore > DolphinsAverageScore) {
+//   console.log(`Koalas is the winner!`);
+// } else if (KoalasAverageScore < DolphinsAverageScore) {
+//   console.log(`Dolphins is the winner!`);
+// } else console.log(`There's a draw between the 2 teams!`);
+
+///////////////////////////////////////////////////
+
+/* 3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. Hint: Use a logical operator to test for minimum score, as well as multiple else-if blocks � */
+
+// § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+
+//// 3
+// let teamName = 'Dolphins';
+// let firstScore = 97;
+// let secondScore = 112;
+// let thirdScore = 101;
+// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+
+// teamName = 'Koalas';
+// firstScore = 109;
+// secondScore = 95;
+// thirdScore = 123;
+// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+
+// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore > 100) {
+//   console.log(`Koalas is the winner!`);
+// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore > 100) {
+//   console.log(`Dolphins is the winner!`);
+// } else console.log(`There's a draw between the 2 teams!`);
+
+///////////////////////////////////////////////////
+
+/* 4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points.Otherwise, no team wins the trophy */
+
+// § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+////4
+// let teamName = 'Dolphins';
+// let firstScore = 97;
+// let secondScore = 112;
+// let thirdScore = 101;
+// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+
+// teamName = 'Koalas';
+// firstScore = 109;
+// secondScore = 95;
+// thirdScore = 106;
+// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
+// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+
+// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore > 100) {
+//   console.log(`Koalas is the winner!`);
+// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore > 100) {
+//   console.log(`Dolphins is the winner!`);
+// } else if (KoalasAverageScore === DolphinsAverageScore && DolphinsAverageScore > 100 && KoalasAverageScore > 100) {
+//   console.log(`There's a draw between the 2 teams!`);
+// } else console.log(`Oh... no one won the trophy :(`);
+
+///////////////////////////////////////////////////
