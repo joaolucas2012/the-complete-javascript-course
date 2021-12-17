@@ -512,26 +512,18 @@ Your tasks:
 /* Test data:
 § Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110 */
 
-//1 and 2
-// let teamName = 'Dolphins';
-// let firstScore = 96;
-// let secondScore = 108;
-// let thirdScore = 89;
-// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+// 1 and 2
+// const DolphinsAverageScore = (96 + 108 + 89) / 3;
+// console.log(`The Dolphins' average score is: ${DolphinsAverageScore}.`);
 
-// teamName = 'Koalas';
-// firstScore = 88;
-// secondScore = 91;
-// thirdScore = 110;
-// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+// const KoalasAverageScore = (88 + 91 + 110) / 3;
+// console.log(`The Koalas' average score is: ${KoalasAverageScore}.`);
 
 // if (KoalasAverageScore > DolphinsAverageScore) {
 //   console.log(`Koalas is the winner!`);
 // } else if (KoalasAverageScore < DolphinsAverageScore) {
 //   console.log(`Dolphins is the winner!`);
-// } else console.log(`There's a draw between the 2 teams!`);
+// } else console.log(`Both win the trophy`);
 
 ///////////////////////////////////////////////////
 
@@ -540,25 +532,17 @@ Your tasks:
 // § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 
 //// 3
-// let teamName = 'Dolphins';
-// let firstScore = 97;
-// let secondScore = 112;
-// let thirdScore = 101;
-// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+// const DolphinsAverageScore = (97 + 112 + 101) / 3;
+// console.log(`The Dolphins' average score is: ${DolphinsAverageScore}.`);
 
-// teamName = 'Koalas';
-// firstScore = 109;
-// secondScore = 95;
-// thirdScore = 123;
-// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+// const KoalasAverageScore = (109 + 95 + 123) / 3;
+// console.log(`The Koalas' average score is: ${KoalasAverageScore}.`);
 
-// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore > 100) {
+// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore >= 100) {
 //   console.log(`Koalas is the winner!`);
-// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore > 100) {
+// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore >= 100) {
 //   console.log(`Dolphins is the winner!`);
-// } else console.log(`There's a draw between the 2 teams!`);
+// } else console.log(`Both win the trophy`);
 
 ///////////////////////////////////////////////////
 
@@ -567,26 +551,79 @@ Your tasks:
 // § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 
 ////4
-// let teamName = 'Dolphins';
-// let firstScore = 97;
-// let secondScore = 112;
-// let thirdScore = 101;
-// const DolphinsAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${DolphinsAverageScore}.`);
+// const DolphinsAverageScore = (97 + 112 + 101) / 3;
+// console.log(`The Dolphins' average score is: ${DolphinsAverageScore}.`);
 
-// teamName = 'Koalas';
-// firstScore = 109;
-// secondScore = 95;
-// thirdScore = 106;
-// const KoalasAverageScore = (firstScore + secondScore + thirdScore) / 3;
-// console.log(`The ${teamName}'s average score is: ${KoalasAverageScore}.`);
+// const KoalasAverageScore = (109 + 95 + 123) / 3;
+// console.log(`The Koalas' average score is: ${KoalasAverageScore}.`);
 
-// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore > 100) {
+// if (KoalasAverageScore > DolphinsAverageScore && KoalasAverageScore >= 100) {
 //   console.log(`Koalas is the winner!`);
-// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore > 100) {
+// } else if (KoalasAverageScore < DolphinsAverageScore && DolphinsAverageScore >= 100) {
 //   console.log(`Dolphins is the winner!`);
-// } else if (KoalasAverageScore === DolphinsAverageScore && DolphinsAverageScore > 100 && KoalasAverageScore > 100) {
-//   console.log(`There's a draw between the 2 teams!`);
-// } else console.log(`Oh... no one won the trophy :(`);
+// } else if (KoalasAverageScore === DolphinsAverageScore && DolphinsAverageScore >= 100 && KoalasAverageScore >= 100) {
+//   console.log(`Both win the trophy`);
+// } else console.log(`Oh... no one wins the trophy :(`);
+
+///////////////////////////////////////////////////
+
+// THE SWITCH STATEMENT
+// const day = prompt('Type a day:');
+
+// switch (day) {
+//   case 'monday': // day === monday'
+//     console.log('Plan course structure');
+//     console.log('Go to coding ');
+//     break;
+//   case 'tuesday':
+//     console.log('Prepare theory videos');
+//     break;
+//   case 'wednesday':
+//   case 'thursday':
+//     console.log('Write code examples');
+//     break;
+//   case 'friday':
+//     console.log('Record videos');
+//     break;
+//   case 'saturday':
+//   case 'sunday':
+//     console.log('Enjoy the weekend');
+//     break;
+//   default:
+//     console.log('Not a valid day!');
+// }
+
+///////////////////////////////////////////////////
+
+/* 1. Use a switch statement to log the following string for the given 'language':
+chinese or mandarin: 'MOST number of native speakers!'
+spanish: '2nd place in number of native speakers'
+english: '3rd place'
+hindi: 'Number 4'
+arabic: '5th most spoken language'
+for all other simply log 'Great language too :D' */
+
+// const language = prompt('Type a language:');
+
+// switch (language) {
+//   case 'chinese':
+//   case 'mandarin':
+//     console.log('MOST number of native speakers!');
+//     break;
+//   case 'spanish':
+//     console.log('2nd place in number of native speakers');
+//     break;
+//   case 'english':
+//     console.log('3rd place');
+//     break;
+//   case 'hindi':
+//     console.log('Number 4');
+//     break;
+//   case 'arabic':
+//     console.log('5th most spoken language');
+//     break;
+//   default:
+//     console.log('Great language too :D');
+// }
 
 ///////////////////////////////////////////////////
