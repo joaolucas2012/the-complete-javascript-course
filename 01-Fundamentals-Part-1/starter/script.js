@@ -627,3 +627,56 @@ for all other simply log 'Great language too :D' */
 // }
 
 ///////////////////////////////////////////////////
+
+// THE CONDITIONAL (TERNARY) OPERATOR
+
+// const age = 23;
+// age >= 18 ? console.log("I'd like to drink wine") : console.log("I'd like to drink water");
+
+// const drink = age >= 18 ? 'wine' : 'water';
+// console.log(drink);
+
+// console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+
+///////////////////////////////////////////////////
+
+/* 1. If your country's population is greater than 33 million, use the ternary operator
+to log a string like this to the console: 'Portugal's population is above average'.
+Otherwise, simply log 'Portugal's population is below average'. Notice how only
+one word changes between these two sentences! */
+
+// const BrazilPopulation = 212.6;
+// console.log(`${BrazilPopulation > 33 ? "Brazil's population is above average" : "Brazil's population is below average"}`);
+
+/* 2. After checking the result, change the population temporarily to 13 and then to
+130. See the different results, and set the population back to original */
+
+///////////////////////////////////////////////////
+
+// CODING CHALLENGE #4
+
+/* Steven wants to build a very simple tip calculator for whenever he goes eating in a
+restaurant. In his country, it's usual to tip 15% if the bill value is between 50 and
+300. If the value is different, the tip is 20%.
+Your tasks:
+1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for
+this. It's not allowed to use an if/else statement � (If it's easier for you, you can
+start with an if/else statement, and then try to convert it to a ternary operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value
+(bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value
+316.25”
+Test data:
+§ Data 1: Test for bill values 275, 40 and 430
+Hints:
+§ To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+§ Value X is between 50 and 300, if it's >= 50 && <= 300 � */
+
+//1
+// const bill = 430;
+// const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
+
+//2
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+///////////////////////////////////////////////////
+
