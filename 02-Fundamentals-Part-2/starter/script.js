@@ -1,10 +1,10 @@
 'use strict';
 
-// let hasDriversLicense = false;
-// const passTest = true;
+let hasDriversLicense = false;
+const passTest = true;
 
-// if (passTest) hasDriversLicense = true;
-// if (hasDriversLicense) console.log('I can drive');
+if (passTest) hasDriversLicense = true;
+if (hasDriversLicense) console.log('I can drive');
 
 // I CAN'T NAME VARIABLES LIKE THIS
 // const interface = 'Audio';
@@ -15,30 +15,30 @@
 
 // FUNCTIONS
 
-// function logger() {
-//   console.log('My name is João Lucas');
-// }
+function logger() {
+  console.log('My name is João Lucas');
+}
 
 // Calling, running or invoking the function
-// logger();
-// logger();
-// logger();
+logger();
+logger();
+logger();
 
-// function fruitProcessor(apples, oranges) {
-// console.log(apples, oranges);
-//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
-//   return juice;
-// }
+function fruitProcessor(apples, oranges) {
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+}
 
-// const appleJuice = fruitProcessor(5, 0);
-// console.log(appleJuice);
-// console.log(fruitProcessor(5, 0));
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+console.log(fruitProcessor(5, 0));
 
-// const appleOrangeJuice = fruitProcessor(2, 4);
-// console.log(appleOrangeJuice);
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
 
-// const num = Number('23');
-// console.log(num);
+const num = Number('23');
+console.log(num);
 
 ///////////////////////////////////////////////////
 
@@ -48,35 +48,35 @@
 */
 
 //1
-// function describeCountry(country, population, capitalCity) {
-//   return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
-// }
+function describeCountry(country, population, capitalCity) {
+  return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+}
 
 //2
-// const firstCountry = describeCountry('Brazil', 212, 'Brazilia');
-// const secondCountry = describeCountry('Portugal', 10, 'Lisboa');
-// const thirdCountry = describeCountry('United States', 333, 'Washington D.C.');
+const firstCountry = describeCountry('Brazil', 212, 'Brazilia');
+const secondCountry = describeCountry('Portugal', 10, 'Lisboa');
+const thirdCountry = describeCountry('United States', 333, 'Washington D.C.');
 
-// console.log(firstCountry);
-// console.log(secondCountry);
-// console.log(thirdCountry);
+console.log(firstCountry);
+console.log(secondCountry);
+console.log(thirdCountry);
 
 ///////////////////////////////////////////////////
 
 // Function declaration
-// function calcAge1(birthYear) {
-//   return 2037 - birthYear;
-// }
-// const age1 = calcAge1(2000);
-// console.log(age1);
+function calcAge1(birthYear) {
+  return 2037 - birthYear;
+}
+const age1 = calcAge1(2000);
+console.log(age1);
 
 // Function expression
-// const calcAge2 = function (birthYear) {
-//   return 2037 - birthYear;
-// }
-// const age2 = calcAge2(1991);
+const calcAge2 = function (birthYear) {
+  return 2037 - birthYear;
+}
+const age2 = calcAge2(1991);
 
-// console.log(age1, age2);
+console.log(age1, age2);
 
 ///////////////////////////////////////////////////
 
@@ -92,61 +92,61 @@ function percentageOfWorld1(population) {
 }
 
 //3
-// const BrazilPercentage = percentageOfWorld1(212);
-// const USAPercentage = percentageOfWorld1(333);
-// const PortugalPercentage = percentageOfWorld1(10);
-// console.log(`Brazil: ${BrazilPercentage.toPrecision(2)}%, USA: ${USAPercentage.toPrecision(2)}%, Portugal: ${PortugalPercentage.toPrecision(2)}%.`);
+const BrazilPercentage = percentageOfWorld1(212);
+const USAPercentage = percentageOfWorld1(333);
+const PortugalPercentage = percentageOfWorld1(10);
+console.log(`Brazil: ${BrazilPercentage.toPrecision(2)}%, USA: ${USAPercentage.toPrecision(2)}%, Portugal: ${PortugalPercentage.toPrecision(2)}%.`);
 
 //4
-// const percentageOfWorld2 = function (population) {
-//   return ((population / 7900) * 100);
-// }
+const percentageOfWorld2 = function (population) {
+  return ((population / 7900) * 100);
+}
 
-// const IrelandPercentage = percentageOfWorld2(4.9);
-// const CanadaPercentage = percentageOfWorld2(38);
-// const CaribbeanPercentage = percentageOfWorld2(44.4);
-// console.log(`Ireland: ${IrelandPercentage.toPrecision(2)}%, Canada: ${CanadaPercentage.toPrecision(2)}%, Caribbean: ${CaribbeanPercentage.toPrecision(2)}%.`);
+const IrelandPercentage = percentageOfWorld2(4.9);
+const CanadaPercentage = percentageOfWorld2(38);
+const CaribbeanPercentage = percentageOfWorld2(44.4);
+console.log(`Ireland: ${IrelandPercentage.toPrecision(2)}%, Canada: ${CanadaPercentage.toPrecision(2)}%, Caribbean: ${CaribbeanPercentage.toPrecision(2)}%.`);
 
 ///////////////////////////////////////////////////
 
 // ARROW FUNCTION
-// const calcAge = birthYear => 2037 - birthYear;
-// const age = calcAge(2000);
-// console.log(age);
+const calcAge = birthYear => 2037 - birthYear;
+const age = calcAge(2000);
+console.log(age);
 
-// const yearsUntilRetirement = (birthYear, firstName) => {
-//   const age = 2021 - birthYear;
-//   const retirement = 65 - age;
-//   // return retirement;
-//   return `${firstName} retires in ${retirement} years.`;
-// }
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2021 - birthYear;
+  const retirement = 65 - age;
+  // return retirement;
+  return `${firstName} retires in ${retirement} years.`;
+}
 
-// console.log(yearsUntilRetirement(2000, 'João Lucas'));
-// console.log(yearsUntilRetirement(1996, 'Carlos'));
+console.log(yearsUntilRetirement(2000, 'João Lucas'));
+console.log(yearsUntilRetirement(1996, 'Carlos'));
 
 /* 1. Recreate the last assignment, but this time create an arrow function called
 'percentageOfWorld3' */
 
-// const percentageOfWorld3 = population => ((population / 7900) * 100);
-// const IrelandPercentage = percentageOfWorld3(4.9);
-// console.log(`Ireland: ${IrelandPercentage.toFixed(2)}%.`);
+const percentageOfWorld3 = population => ((population / 7900) * 100);
+const IrelandPercentage = percentageOfWorld3(4.9);
+console.log(`Ireland: ${IrelandPercentage.toFixed(2)}%.`);
 
 ///////////////////////////////////////////////////
 
 // FUNCTIONS CALLING OTHER FUNCTIONS
-// function cutFruitPieces(fruit) {
-//   return fruit * 4;
-// }
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
 
-// function fruitProcessor(apples, oranges) {
-//   const applePieces = cutFruitPieces(apples);
-//   const orangePieces = cutFruitPieces(oranges);
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
 
-//   const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
-//   return juice;
-// }
+  const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+  return juice;
+}
 
-// console.log(fruitProcessor(2, 3));
+console.log(fruitProcessor(2, 3));
 
 
 /* 1. Create a function called 'describePopulation'. Use the function type you
@@ -158,12 +158,48 @@ which is about 18.2% of the world.'
 3. Call 'describePopulation' with data for 3 countries of your choice */
 
 //1
-// const describePopulation = (country, population) => {
-//   return `${country} has ${population} million people, which is about ${percentageOfWorld1(population).toFixed(2)}% of the world.`;
-// }
+const describePopulation = (country, population) => {
+  return `${country} has ${population} million people, which is about ${percentageOfWorld1(population).toFixed(2)}% of the world.`;
+}
 
-// console.log(describePopulation('Brazil', 212));
-// console.log(describePopulation('Portugal', 10));
-// console.log(describePopulation('Ireland', 4.9));
+console.log(describePopulation('Brazil', 212));
+console.log(describePopulation('Portugal', 10));
+console.log(describePopulation('Ireland', 4.9));
+
+///////////////////////////////////////////////////
+
+// REVIEWING FUNCTIONS
+
+/* Arrow function */
+// Name = parameters => result.
+const calcAge = birthYear => 2037 - birthYear;
+
+/* Function declaration */
+// function name(parameters){result}
+function verifyAge(retirement, firstName) {
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years.`);
+  } else {
+    console.log(`${firstName} has already retired.`);
+    ;
+  }
+}
+
+/* Function expression */
+// const name = function(parameters){result}
+const yearsUntilRetirement = function (birthYear, firstName) {
+
+  //Calling an arrow function
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  //Calling a normal function
+  verifyAge(retirement, firstName);
+}
+
+//Calling a function expression
+yearsUntilRetirement(1991, 'Jonas');
+yearsUntilRetirement(1950, 'João Lucas');
+yearsUntilRetirement(2004, 'Gustavo');
 
 ///////////////////////////////////////////////////
