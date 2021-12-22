@@ -255,3 +255,55 @@ Apply this to the team's average scores � */
 // console.log(checkWinner(averageDolphins2, averageKoalas2));
 
 ///////////////////////////////////////////////////
+
+// INSTRODUCTION TO ARRAYS
+
+// const frient1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// Literals implementation
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// Second form to declare an array
+// const years = new Array(1991, 1996, 2000, 2020);
+
+// Log a value that is in a specific position of the array
+// console.log(friends[0]);
+// console.log(friends[1]);
+
+// Log the array length
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+
+// Change a value inside of a position of the array
+// friends[2] = 'Jay';
+// console.log(friends);
+
+// Create an array with another array inside
+// const firstName = 'Jonas';
+// const jonas = [firstName, 'Schmedtmann', 20037 - 1991, 'teacher', friends];
+// console.log(jonas);
+// console.log(jonas.length);
+
+// Exercise
+// function calcAge1(birthYear) {
+//   return 2037 - birthYear;
+// }
+
+// Calling functions inside of the array
+// const years2 = [1990, 2000, 2002, 2010, 2018];
+// const age1 = calcAge1(years2[0]);
+// const age2 = calcAge1(years2[1]);
+// const age3 = calcAge1(years2[years2.length - 1]);
+// console.log(age1, age2, age3);
+
+// Better form
+// const ages = [calcAge1(years2[0]), calcAge1(years2[1]), calcAge1(years2[years2.length - 1])];
+// console.log(ages);
+
+// Training
+// const minusOne = valor => valor - 1;
+// const vetor = [minusOne(2), minusOne(56)];
+// console.log(vetor);
