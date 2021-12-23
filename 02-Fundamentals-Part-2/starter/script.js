@@ -19,6 +19,10 @@
 //   console.log('My name is João Lucas');
 // }
 
+const log = parameter => console.log(`${parameter}`);
+
+const logArray = vector => console.log(vector);
+
 // Calling, running or invoking the function
 // logger();
 // logger();
@@ -328,6 +332,77 @@ function percentageOfWorld1(population) {
 const percentages = [percentageOfWorld1(populations[0]).toFixed(2), percentageOfWorld1(populations[1]).toFixed(2), percentageOfWorld1(populations[2]).toFixed(2), percentageOfWorld1(populations[3]).toFixed(2)];
 
 console.log(percentages);
+*/
+
+///////////////////////////////////////////////////
+
+// BASIC ARRAY OPERATION (METHODS)
+
+/*
+// ADD ELEMENTS //
+// push() add elements to the end of the array
+const friends = ['Michael', 'Steven', 'Peter'];
+friends.push('Jay');
+logArray(friends);
+log(friends.length);
+
+// unshift() add elements to the beginning of the array
+friends.unshift('John');
+logArray(friends);
+log(friends.length);
+
+// REMOVE ELEMENTS //
+// pop() remove the last element of the arrays
+friends.pop();
+const popped = friends.pop();
+log(popped);
+logArray(friends);
+log(friends.length);
+
+// shift() remove the first element of the array
+friends.shift();
+const shifted = friends.shift();
+log(shifted);
+logArray(friends);
+log(friends.length);
+
+// KNOW THE POSITION OF THE ELEMENTS //
+// indexOf() shows the position of the element
+log(friends.indexOf('Steven'));
+
+// KNOW IF THE VALUE IS INSIDE OF THE ARRAY //
+// includes() returns true if the value is in the array and false if it isn't
+log(friends.includes('Bob'));
+log(friends.includes('Steven'));
+friends.includes('Jennifer') === true ? log(`Jennifer is in the array`) : log(`Jennifer isn't in the array`);
+*/
+
+///////////////////////////////////////////////////
+
+/* 1. Create an array containing all the neighbouring countries of a country of your
+choice. Choose a country which has at least 2 or 3 neighbours. Store the array into a variable called 'neighbours'
+2. At some point, a new country called 'Utopia' is created in the neighbourhood of your selected country. So add it to the end of the 'neighbours' array
+3. Unfortunately, after some time, the new country is dissolved. So remove it from the end of the array
+4. If the 'neighbours' array does not include the country ‘Germany’, log to the console: 'Probably not a central European country :D'
+5. Change the name of one of your neighbouring countries. To do that, find the index of the country in the 'neighbours' array, and then use that index to change the array at that index position. For example, you can search for
+'Sweden' in the array, and then replace it with 'Republic of Sweden'. */
+
+/*
+//1
+const neighbours = ['Canada', 'Mexico'];
+
+//2
+neighbours.push('Utopia');
+
+//3
+neighbours.pop();
+
+//4
+if (!neighbours.includes('Germany')) log(`Probably not a central European country :D`);
+
+//5
+neighbours[neighbours.indexOf('Mexico')] = 'Brazil';
+log(neighbours);
 */
 
 ///////////////////////////////////////////////////
