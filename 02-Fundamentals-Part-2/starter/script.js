@@ -448,3 +448,37 @@ logArray(total);
 */
 
 ///////////////////////////////////////////////////
+
+// INTRODUCTION TO OBJECTS
+
+// Each value inside the object is called a "key"
+// Each key is a property of the object
+// In this case, jonas is an object with five properties
+// The data inside the object doesn't need to be in order like in an array
+
+/*
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  age: 2021 - 2000,
+  job: 'Bricklayer',
+  friends: ['Renato', 'Fred', 'Ribas']
+};
+*/
+
+///////////////////////////////////////////////////
+
+/* 1. Create an object called 'myCountry' for a country of your choice, containing properties 'country', 'capital', 'language', 'population' and
+'neighbours' (an array like we used in previous assignments) */
+
+/*
+const myCountry = {
+  country: 'USA',
+  capital: 'Washington D.C.',
+  language: 'Portuguese',
+  population: 329.5,
+  neighbours: ['Canada', 'Mexico']
+};
+*/
+
+///////////////////////////////////////////////////
