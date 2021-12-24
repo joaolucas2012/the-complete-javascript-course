@@ -482,3 +482,45 @@ const myCountry = {
 */
 
 ///////////////////////////////////////////////////
+
+// DOT VS BRACKET NOTATION
+/*
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  age: 2021 - 2000,
+  job: 'Bricklayer',
+  friends: ['Renato', 'Fred', 'Michael']
+};
+logArray(jonas);
+
+// DOT NOTATION
+log(jonas.lastName);
+
+// BRACKET NOTATION
+log(jonas['lastName']);
+
+// It's possible to catch a property by this way:
+const nameKey = 'Name';
+log(jonas['first' + nameKey]); // first + nameKey = first + 'Name' = 'firstName'
+log(jonas['last' + nameKey]); // last + nameKey = last + 'Name' = 'lastName'
+
+// const interestedIn = prompt(`What do you want to know about Jonas? Choose between, firstName, lastName, age, job, and friends`);
+
+// Using an expression inside the bracket notation
+// log(jonas[interestedIn]);
+// jonas[interestedIn] ? log(jonas[interestedIn]) : log(`Wrong request... Choose between, firstName, lastName, age, job, and friends`);
+
+// ADD A PROPERTY TO THE OBJECT
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasribeiro';
+logArray(jonas);
+
+*/
+
+// Challenge
+// Write "Jonas has 3 friends, and his best friend is called Michael"
+// log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[jonas.friends.indexOf('Michael')]}`);
+
+///////////////////////////////////////////////////
