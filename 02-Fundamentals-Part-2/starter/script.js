@@ -524,3 +524,26 @@ logArray(jonas);
 // log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[jonas.friends.indexOf('Michael')]}`);
 
 ///////////////////////////////////////////////////
+
+/* 1. Using the object from the previous assignment, log a string like this to the console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries and a capital called Helsinki.'
+2. Increase the country's population by two million using dot notation, and then decrease it by two million using brackets notation. */
+
+/*
+//1
+const country = {
+  name: 'Finland',
+  population: 6,
+  neighbouringCountries: ['Sweden', 'Russia', 'Norway'],
+  capital: 'Helsinki'
+};
+log(`${country.name} has ${country.population} million finnish-speaking people, ${country.neighbouringCountries.length} neighbouring countries and a capital called ${country.capital}.`);
+
+//2
+country.population += 2;
+logArray(country);
+country['population'] -= 2;
+logArray(country);
+
+*/
+
+///////////////////////////////////////////////////
