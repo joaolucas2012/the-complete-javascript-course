@@ -726,3 +726,84 @@ the console (for numbers 1 to 50): 'Voter number 1 is currently voting' */
 // }
 
 ///////////////////////////////////////////////////
+
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+/*
+const jonas = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+  // Reading from jonas array
+  console.log(jonas[i], typeof jonas[i]);
+
+  // Filling types array
+  // types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+}
+
+logArray(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+// Continue
+log(`--- WITHOUT STRINGS ---`);
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== 'string') continue;
+  log(jonas[i]);
+  types.push(typeof jonas[i]);
+}
+
+// Break
+log(`--- BREAK WITH NUMBER ---`);
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === 'number') break;
+  log(jonas[i]);
+  types.push(typeof jonas[i]);
+}
+*/
+
+///////////////////////////////////////////////////
+
+/* 1. Let's bring back the 'populations' array from a previous assignment
+2. Use a for loop to compute an array called 'percentages2' containing the
+percentages of the world population for the 4 population values. Use the
+function 'percentageOfWorld1' that you created earlier
+3. Confirm that 'percentages2' contains exactly the same values as the
+'percentages' array that we created manually in the previous assignment,
+and reflect on how much better this solution is */
+
+/*
+//1
+// const populations = [212, 4.9, 38, 44.4];
+
+//2
+function percentageOfWorld1(population) {
+  return ((population / 7900) * 100);
+}
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+//3
+for (let i = 0; i < percentages.length; i++) {
+  percentages2[i] = percentages[i] ? log(`It worked!`) : log(`oops...`);
+}
+*/
+
+///////////////////////////////////////////////////
+
