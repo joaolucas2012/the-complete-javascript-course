@@ -857,3 +857,50 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
 
 ///////////////////////////////////////////////////
 
+// THE WHILE LOOP
+
+// Inspiration
+// for (let rep = 1; rep <= 10; rep++) {
+//   log(`Lifting weights repetition ${rep}`);
+// }
+
+// let rep = 1;
+// // Run while the condition is true
+// while (rep <= 10) {
+//   log(`Lifting weights repetition ${rep}`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6);
+// console.log(dice);
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log(`Loop is about to end...`);
+// }
+
+///////////////////////////////////////////////////
+
+/* 1. Recreate the challenge from the lecture 'Looping Arrays, Breaking and Continuing',
+but this time using a while loop (call the array 'percentages3')
+2. Reflect on what solution you like better for this task: the for loop or the while
+loop? */
+
+/*
+const populations = [212, 4.9, 38, 44.4];
+
+//1 and 2
+function percentageOfWorld1(population) {
+  return ((population / 7900) * 100);
+}
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}
+logArray(percentages3);
+*/
+
+///////////////////////////////////////////////////
