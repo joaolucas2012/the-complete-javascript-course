@@ -705,3 +705,24 @@ if (MarkMiller.calcBMI() > JohnSmith.calcBMI()) {
   log(`${JohnSmith.fullName} 's BMI (${JohnSmith.BMI}) is higher than ${MarkMiller.fullName}'s(${MarkMiller.BMI})!`);
 }
 */
+
+///////////////////////////////////////////////////
+
+// ITERATION: THE LOOP FOR
+// log(`Lifting weights repetition 1`);
+
+//// For loop keeps running while condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+//   log(`Lifting weights repetition ${rep}`);
+// }
+
+///////////////////////////////////////////////////
+
+/* 1. There are elections in your country! In a small town, there are only 50 voters.
+Use a for loop to simulate the 50 people voting, by logging a string like this to
+the console (for numbers 1 to 50): 'Voter number 1 is currently voting' */
+// for (let voters = 1; voters <= 50; voters++) {
+//   log(`Voter number ${voters} is currently voting`);
+// }
+
+///////////////////////////////////////////////////
