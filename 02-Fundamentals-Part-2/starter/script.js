@@ -547,3 +547,110 @@ logArray(country);
 */
 
 ///////////////////////////////////////////////////
+
+// OBJECT METHODS
+/*
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  birthYear: 1991,
+  job: 'Bricklayer',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+
+  // calcAge: birthYear => 2037 - birthYear
+
+  // calcAge: function () {
+  //   logArray(this);
+  //   return 2037 - this.birthYear;
+  // }
+
+calcAge: function () {
+  this.age = 2013 - this.birthYear;
+  return this.age;
+}
+};
+
+*/
+
+// log(jonas.calcAge());
+// log(jonas['calcAge'](2000));
+
+// Challenge
+// Write a method called getSummary that returns a string like this: "Jonas is a 46-year old bricklayer, and he has a/no driver's license"
+/*
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  birthYear: 1991,
+  job: 'bricklayer',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    this.age = 2013 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense === true ? `a` : `no`} driver's license`;
+  }
+};
+
+log(jonas['getSummary']());
+
+*/
+
+///////////////////////////////////////////////////
+
+/* 1. Add a method called 'describe' to the 'myCountry' object. This method
+will log a string to the console, similar to the string logged in the previous
+assignment, but this time using the 'this' keyword.
+2. Call the 'describe' method
+3. Add a method called 'checkIsland' to the 'myCountry' object. This
+method will set a new property on the object, called 'isIsland'.
+'isIsland' will be true if there are no neighbouring countries, and false if
+there are. Use the ternary operator to set the property.
+*/
+
+//1
+/*
+const myCountry = {
+  country: 'USA',
+  capital: 'Washington D.C.',
+  language: 'Portuguese',
+  population: 329.5,
+  neighbours: ['Canada', 'Mexico'],
+  describe: function () {
+    log(`${this.country} has ${this.population} million finnish-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`);
+  }
+};
+*/
+
+//2
+// myCountry.describe();
+
+//3
+/*
+const myCountry = {
+  country: 'USA',
+  capital: 'Washington D.C.',
+  language: 'Portuguese',
+  population: 329.5,
+  neighbours: ['Canada', 'Mexico'],
+
+  describe: function () {
+    log(`${this.country} has ${this.population} million finnish-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`);
+  },
+
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length <= 0 ? true : false;
+    return this.isIsland;
+  }
+};
+
+log(myCountry.checkIsland());
+*/
+
+///////////////////////////////////////////////////
+
