@@ -807,3 +807,53 @@ for (let i = 0; i < percentages.length; i++) {
 
 ///////////////////////////////////////////////////
 
+// LOOPING BACKWARDS AND LOOPS IN LOOPS
+/*
+const jonas = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+// Looping backwards
+// jonas[4], jonas[3], ..., jonas[0]
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(i, jonas[i]);
+}
+
+// Loop in loop order
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise} --------`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting weight repetition ${rep}`);
+  }
+}
+*/
+
+///////////////////////////////////////////////////
+
+/* 1. Store this array of arrays into a variable called 'listOfNeighbours' [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden',
+'Russia']];
+2. Log only the neighbouring countries to the console, one by one, not the entire
+arrays. Log a string like 'Neighbour: Canada' for each country
+3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't
+worry if it's too difficult for you! But you can still try to figure this out anyway � */
+
+/*
+//1
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']
+];
+
+//2 and 3
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let rep = 0; rep < listOfNeighbours[i].length; rep++) {
+    console.log(`Neighbour: ${listOfNeighbours[i][rep]}`);
+  }
+}
+*/
+
+///////////////////////////////////////////////////
+
