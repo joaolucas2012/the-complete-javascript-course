@@ -127,3 +127,55 @@ console.log(amplitudeNew);
 */
 
 ///////////////////////////////////////////////////
+
+// SOLVING ANOTHER PROBLEM BY MYSELF
+
+/* Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+uniqueInOrder([1,2,2,3,3])       == [1,2,3] 
+*/
+
+// 1) Understanding the problem
+// - How to count similar elements in a string?
+// - How to separate an string?
+
+// 2) Breaking up into sub-problems
+// - If the argument is an array, do it in a different way
+// - Identify different elements in the string
+// - Count the number of similar elements
+// - Create an array with the elements separated
+// - Return the array with the elements separated caracteres
+
+/*
+// RESOLUTION
+const unique_in_order = function (sequence) {
+  let caracteres = [];
+  if (typeof sequence === 'string') {
+    caracteres = sequence.split('');
+  } else {
+    for (let i = 0; i < sequence.length; i++) {
+      caracteres.push(sequence[i]);
+    }
+  }
+  const uniqueOrdered = [];
+  uniqueOrdered.push(caracteres[0]);
+  for (let i = 0; i < caracteres.length; i++) {
+    let caract = caracteres[i];
+    if (caract === uniqueOrdered[uniqueOrdered.length - 1]) continue;
+    uniqueOrdered.push(caract);
+  }
+  return uniqueOrdered;
+};
+// const sequence = 'AAAABBBCCDAABBB';
+// const sequence = 'ABBCcAD';
+// const sequence = 'ABBCcAD';
+// const sequence = [1, 2, 2, 3, 3];
+
+console.log(unique_in_order(sequence));
+
+*/
+
+///////////////////////////////////////////////////
