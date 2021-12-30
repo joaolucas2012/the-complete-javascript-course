@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // let hasDriversLicense = false;
 // const passTest = true;
@@ -19,9 +19,9 @@
 //   console.log('My name is João Lucas');
 // }
 
-const log = parameter => console.log(`${parameter}`);
+// const log = parameter => console.log(`${parameter}`);
 
-const logArray = vector => console.log(vector);
+// const logArray = vector => console.log(vector);
 
 // Calling, running or invoking the function
 // logger();
@@ -151,7 +151,6 @@ represents. For example, China has 1441 million people, so it's about 18.2% of t
 // }
 
 // console.log(fruitProcessor(2, 3));
-
 
 /* 1. Create a function called 'describePopulation'. Use the function type you
 like the most. This function takes in two arguments: 'country' and
