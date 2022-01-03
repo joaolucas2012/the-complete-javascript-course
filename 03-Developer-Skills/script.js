@@ -179,3 +179,85 @@ console.log(unique_in_order(sequence));
 */
 
 ///////////////////////////////////////////////////
+
+//DEBUGGING (FIXING ERRORS):
+/*
+A) IDENTIFY
+B) FIND
+C) FIX
+D) PREVENT
+*/
+///////////////////////////////////////////////////
+
+// DEBUGGING WITH THE CONSOLE AND BREAKPOINTS
+
+/*
+// There's a bug here
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    // Fixing and preventing an error
+    value: Number(prompt('Degrees celsius:')),
+  };
+  debugger;
+  // Testing if the value is being read
+  console.log(measurement.value); //OK
+  // console.warn(measurement.value);
+  // console.error(measurement.value);
+  // console.table(10measurement);
+
+  // After test it, I found that the value is a string, not a number. That's the bug.
+  console.log(measurement);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+// A) IDENTIFY THE BUG
+console.log(measureKelvin());
+
+*/
+
+///////////////////////////////////////////////////
+
+// Coding Challenge #1
+
+/*
+Given an array of forecasted maximum temperatures, the thermometer displays a
+string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1
+days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+Your tasks:
+1. Create a function 'printForecast' which takes in an array 'arr' and logs a
+string like the above to the console. Try it with both test datasets.
+2. Use the problem-solving framework: Understand the problem and break it up
+into sub-problems!
+Test data:
+§ Data 1: [17, 21, 23]
+§ Data 2: [12, 5, -5, 0, 4]
+
+*/
+
+/*
+
+// 1) Understanding the problem
+// - How to loop an array?
+// - How to print a string like this?
+
+// 2) Breaking up into sub-problems
+// - Get the array and loop trough it 
+// - Print the string with the values in degrees in each iteration
+
+// 1
+// const temperatures = [17, 21, 23];
+// const temperatures = [12, 5, -5, 0, 4];
+
+const printForecast = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`${arr[i]}ºC in ${i + 1} days`);
+  }
+};
+
+//2
+printForecast(temperatures);
+
+*/
