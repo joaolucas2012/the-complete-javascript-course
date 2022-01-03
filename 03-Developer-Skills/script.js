@@ -219,6 +219,7 @@ console.log(measureKelvin());
 */
 
 ///////////////////////////////////////////////////
+<<<<<<< HEAD
 
 // Coding Challenge #1
 
