@@ -179,3 +179,43 @@ console.log(unique_in_order(sequence));
 */
 
 ///////////////////////////////////////////////////
+
+//DEBUGGING (FIXING ERRORS):
+/*
+A) IDENTIFY
+B) FIND
+C) FIX
+D) PREVENT
+*/
+///////////////////////////////////////////////////
+
+// DEBUGGING WITH THE CONSOLE AND BREAKPOINTS
+
+/*
+// There's a bug here
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    // Fixing and preventing an error
+    value: Number(prompt('Degrees celsius:')),
+  };
+  debugger;
+  // Testing if the value is being read
+  console.log(measurement.value); //OK
+  // console.warn(measurement.value);
+  // console.error(measurement.value);
+  // console.table(10measurement);
+
+  // After test it, I found that the value is a string, not a number. That's the bug.
+  console.log(measurement);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+// A) IDENTIFY THE BUG
+console.log(measureKelvin());
+
+*/
+
+///////////////////////////////////////////////////
