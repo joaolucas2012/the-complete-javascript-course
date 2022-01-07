@@ -30,7 +30,7 @@ console.log(document.querySelector('.guess').value);
 // HANDLING CLICK EVENTS
 
 // Defining the number between 1 and 20 randomly
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 
 // Selecting the button element
@@ -50,6 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     document.querySelector('.number').textContent = guess;
     document.querySelector('.message').textContent = '🎉Correct Number!';
+    document.querySelector('#guess-number').textContent = 'Congratulations!';
 
     document.querySelector('body').style.backgroundColor = '#60b347';
 
@@ -78,3 +79,35 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
 });
+
+//////////////////////////////////////////////////
+
+// CODING CHALLENGE #1
+
+/* Implement a game rest functionality, so that the player can make a new guess!
+Your tasks:
+1. Select the element with the 'again' class and attach a click event handler
+2. In the handler function, restore initial values of the 'score' and 'secretNumber' variables
+3. Restore the initial conditions of the message, number, score and guess input fields
+4. Also restore the original background color (#222) and number width (15rem)
+ */
+
+//1
+document.querySelector('.again').addEventListener('click', function () {
+  //2
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  //3
+  document.querySelector('#guess-number').textContent = 'Guess My Number!';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.guess').value = '';
+  document.querySelector('.score').textContent = score;
+
+  //4
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+});
+
+//////////////////////////////////////////////////
