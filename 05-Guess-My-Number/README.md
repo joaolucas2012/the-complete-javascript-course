@@ -154,4 +154,4 @@ In order to carry out a study on DOM (Document Object Model) Manipulation **GUES
 
 - Have fun finding the mysterious number until you get the highest `highscore`!
 
-![GUESS MY NUMBER](imagens/guess-my-number.png)
+![GUESS MY NUMBER](images/guess-my-number.png)
