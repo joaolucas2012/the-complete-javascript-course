@@ -49,8 +49,11 @@ In order to carry out a study on DOM (Document Object Model) Manipulation **GUES
 > > images
 > >
 > > > guess-my-number.png
+> >
 > > > lost.png
+> >
 > > > won.png
+> >
 > > > .prettierrc
 
 > > index.html
