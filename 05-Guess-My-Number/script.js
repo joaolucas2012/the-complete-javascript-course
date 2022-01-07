@@ -27,10 +27,51 @@ console.log(document.querySelector('.guess').value);
 
 //////////////////////////////////////////////////
 
+// REFACTORING OUR CODE: THE DRY PRINCIPLE
+// It is the act of shortening repeated lines of code without altering how the code works as a whole.
+/* 
+--> It can be done by creating a new logic that encompasses two logics with repeated codes, so the code becomes one, in the same logic, only with the ternary operator (condition ? if yes, do this : if not do that;).
+--> It can also be done using functions.
+*/
+
+/* Defining refactor functions */
+
+// To display a message in the Html
+const displayMessage = message =>
+  (document.querySelector('.message').textContent = message);
+
+// To display the guess number
+const displayGuess = message =>
+  (document.querySelector('.number').textContent = message);
+
+// To define the number between 1 and 20 randomly
+const random = () => {
+  let secretNumber = Math.trunc(Math.random() * 20) + 1;
+  return secretNumber;
+};
+
+// To display a victory message
+const displayVictory = message =>
+  (document.querySelector('#guess-number').textContent = message);
+
+// To change the body style
+const changeStyle = color =>
+  (document.querySelector('body').style.backgroundColor = color);
+
+// To change the score
+const changeScore = content =>
+  (document.querySelector('.score').textContent = content);
+
+// To change the number element width
+const changeWidth = number =>
+  (document.querySelector('.number').style.width = number);
+
+//////////////////////////////////////////////////
+
 // HANDLING CLICK EVENTS
 
 // Defining the number between 1 and 20 randomly
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = random();
 let score = 20;
 let highScore = 0;
 
@@ -45,42 +86,32 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When there is no input
   if (!guess) {
-    document.querySelector('.message').textContent = '🚫No number!';
+    displayMessage('🚫No number!');
 
     // When the player wins
   } else if (guess === secretNumber) {
-    document.querySelector('.number').textContent = guess;
-    document.querySelector('.message').textContent = '🎉Correct Number!';
-    document.querySelector('#guess-number').textContent = 'Congratulations!';
+    displayGuess(guess);
+    displayMessage('🎉Correct Number!');
+    displayVictory('Congratulations!');
 
-    document.querySelector('body').style.backgroundColor = '#60b347';
-    document.querySelector('.number').style.width = '30rem';
+    changeStyle('#60b347');
+    changeWidth('30rem');
 
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
 
-    // When guess is too high
-  } else if (guess > secretNumber) {
+    // When the guess is wrong
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '🧨Too high!';
+      // When guess is too high or too low
+      displayMessage(guess > secretNumber ? '🧨Too high!' : '🤏Too low!');
       score--;
-      document.querySelector('.score').textContent = score;
+      changeScore(score);
     } else {
-      document.querySelector('.message').textContent = '🥺You lost the game!';
-      document.querySelector('.score').textContent = 0;
-    }
-
-    // When guess is too low
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '🤏Too low!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '🥺You lost the game!';
-      document.querySelector('.score').textContent = 0;
+      displayMessage('🥺You lost the game!');
+      changeScore(0);
     }
   }
 });
@@ -101,18 +132,18 @@ Your tasks:
 document.querySelector('.again').addEventListener('click', function () {
   //2
   score = 20;
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  secretNumber = random();
 
   //3
-  document.querySelector('#guess-number').textContent = 'Guess My Number!';
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('.message').textContent = 'Start guessing...';
+  displayVictory('Guess My Number!');
+  displayGuess('?');
+  displayMessage('Start guessing...');
   document.querySelector('.guess').value = '';
-  document.querySelector('.score').textContent = score;
+  changeScore(score);
 
   //4
-  document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.number').style.width = '15rem';
+  changeStyle('#222');
+  changeWidth('15rem');
 });
 
-//////////////////////////////////////////////////
+///////////////////////////////////////////////////
