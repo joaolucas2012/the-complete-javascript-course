@@ -54,7 +54,7 @@ In order to carry out a study on DOM (Document Object Model) Manipulation **GUES
 > >
 > > > won.png
 > >
-> > > .prettierrc
+> > .prettierrc
 
 > > index.html
 
