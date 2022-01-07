@@ -86,9 +86,11 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // When there is no input
   if (!guess) {
-    displayMessage('🚫No number!');
+    displayMessage('⛔No number!');
 
     // When the player wins
+  } else if (guess > 20 || guess < 1) {
+    displayMessage('⛔The number needs to be from 1 to 20!');
   } else if (guess === secretNumber) {
     displayGuess(guess);
     displayMessage('🎉Correct Number!');
