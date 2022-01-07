@@ -55,7 +55,7 @@ const displayVictory = message =>
   (document.querySelector('#guess-number').textContent = message);
 
 // To change the body style
-const changeStyle = color =>
+const changeColor = color =>
   (document.querySelector('body').style.backgroundColor = color);
 
 // To change the score
@@ -94,7 +94,7 @@ document.querySelector('.check').addEventListener('click', function () {
     displayMessage('🎉Correct Number!');
     displayVictory('Congratulations!');
 
-    changeStyle('#60b347');
+    changeColor('#60b347');
     changeWidth('30rem');
 
     if (score > highScore) {
@@ -110,7 +110,9 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       changeScore(score);
     } else {
+      displayVictory('Almost there...');
       displayMessage('🥺You lost the game!');
+      changeColor('red');
       changeScore(0);
     }
   }
@@ -142,7 +144,7 @@ document.querySelector('.again').addEventListener('click', function () {
   changeScore(score);
 
   //4
-  changeStyle('#222');
+  changeColor('#222');
   changeWidth('15rem');
 });
 
