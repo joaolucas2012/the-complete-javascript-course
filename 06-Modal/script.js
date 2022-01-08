@@ -32,3 +32,19 @@ for (let i = 0; i < btnsShowModal.length; i++) {
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+/* 
+THERE ARE 3 TYPES OF KEYBOARD EVENTS:
+- KEYUP: When when we lift our finger off the keyboard.
+- KEYPRESS: It is fired continuously while keeping our finger on a certain key.
+- KEYDOWN: It is fired as soon as we press the key. */
+
+// HANDLING AN "ESC" KEYPRESS EVENT
+document.addEventListener('keydown', function (e) {
+  // To know the name of the key pressed
+  console.log(e.key);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
