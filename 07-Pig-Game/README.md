@@ -87,7 +87,7 @@ In order to carry out a study on DOM (Document Object Model) Manipulation **PIG 
 
 - The `script.js` is responsible for `execution and functioning of the interface buttons`.
 
-- The `style.js` is responsible for styling the game's interface.
+- The `style.js` is responsible for `styling the game's interface`.
 
 ## CONFIGURING PRETTIER IN VS CODE:
 
