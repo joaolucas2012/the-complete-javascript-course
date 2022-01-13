@@ -134,7 +134,7 @@ const calcAgeRegular = function (birthYear) {
 };
 calcAgeRegular(2000);
 
-// Arrow functions point to their pattern scope, or their pattern functions
+// Arrow functions point to their parent scope, or their parent functions
 // In this case, the this keyword points to the global scope, that is the Javascript object window
 const calcAgeArrow = birthYear => {
   console.log(2037 - birthYear);
@@ -157,6 +157,69 @@ joaoLucas.calcAgeMethod();
 const f = joaoLucas.calcAgeMethod;
 // f became just a regular function call, and because of it, the this keyword points to undefined
 // f();
+
+*/
+///////////////////////////////////////////////////
+/*
+// REGULAR FUNCTIONS VS ARROW FUNCTIONS IN PRACTICE:
+
+// When I declare a var variable in the global scope, it creates a property in the Javascript window object
+// var firstName = 'Matilda';
+
+// An object does not have its own scope, its simply the way that it is literally declared
+const joaoLucas = {
+  firstName: 'João',
+  year: 2000,
+  calcAgeMethod: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    // Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // --> If I'm going to declare a function inside another in an object, that second function must be an arrow function, in case I decide to use the this keyword.
+    // --> Since the arrow function doesn't have this keyword pointing to itself, it will point to the this keyword of the function in which it was declared.
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMillenial();
+  },
+
+  // As mentioned before, arrow functions don't have a this keyword. In this case, it will point to the Javascript object window, its parent function (global scope)
+  greet: () => {
+    console.log(`Hey ${this.firstName}`);
+
+    // Here the result will be the window object
+    console.log(this);
+  },
+};
+joaoLucas.greet();
+
+// When we try to get an object property that not exists, it will return undefined
+// Here the result will be the window object name Matilda, it is equal to "window.firstName", and in the global scope, the firstName is Matilda
+console.log(this.firstName);
+joaoLucas.calcAgeMethod();
+
+// Arguments keyword
+// It returns an array with the arguments received by a function
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+
+// An arrow functions doesn't have the arguments keyword
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+// addArrow(2, 5, 8);
 
 */
 ///////////////////////////////////////////////////
