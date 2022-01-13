@@ -121,3 +121,42 @@ console.log(z === window.z);
 
 */
 ///////////////////////////////////////////////////
+
+// THE THIS KEYWORD IN PRACTICE
+/*
+// The this keyword points to the Javascript object window
+console.log(this);
+
+// Regular functions point to themselves, but their value is undefined
+const calcAgeRegular = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeRegular(2000);
+
+// Arrow functions point to their pattern scope, or their pattern functions
+// In this case, the this keyword points to the global scope, that is the Javascript object window
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(2000);
+
+// The this keyword points to the object that is calling the method. In this case, it pointed to the joaoLucas object, that is the owner of the method
+// this pointed to the 'joaoLucas' that is calling the calcAge() method, and not to the 'joaoLucas' object in witch the calcAge() method is declared!
+const joaoLucas = {
+  year: 2000,
+  calcAgeMethod: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+joaoLucas.calcAgeMethod();
+
+// Here I copied the calcAgeMethod value of joaoLucas object and I stored it inside the f variable
+const f = joaoLucas.calcAgeMethod;
+// f became just a regular function call, and because of it, the this keyword points to undefined
+// f();
+
+*/
+///////////////////////////////////////////////////
