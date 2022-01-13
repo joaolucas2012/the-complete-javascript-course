@@ -59,3 +59,65 @@ calcAge(1991);
 // Global scope cannot access variables declared in the function scopes (inner functions)
 // console.log(age);
 // printAge();
+
+///////////////////////////////////////////////////
+
+/*
+// HOISTING AND TDZ (TEMPORAL DEAD ZONE)
+// The temporal dead zone starts from the beginning of the code (global scope) to the point where the variable is declared
+
+// Var variables are hoisted, but their value is undefined when they're called before declaration
+console.log(me);
+
+// Let and const variables aren't hoisted, so they can't be accessed before initialization, and they are in the temporal dead zone before their initialization
+console.log(job);
+console.log(year);
+
+// Variables
+var me = 'João Lucas';
+let job = 'programmer';
+const year = 2000;
+
+// Function declarations can be accessed before their declaration, cause they're hoisted
+console.log(addDecl(2, 3));
+
+// var Function expressions and var arrow functions cannot be called before their initialization, cause they are hoisted, but their value is undefined
+console.log(addExpr(2, 3));
+
+// const Function expressions and const arrow functions cannot be called before their initialization, cause they aren't hoisted
+console.log(addArrow(2, 3));
+
+// Functions
+function addDecl(a, b) {
+  return a + b;
+}
+var addExpr = function (a, b) {
+  return a + b;
+};
+const addArrow = (a, b) => a + b;
+
+// Example
+
+// Here the function declaration is called, because it is hoisted, but the var variable at this point is undefined by its hoisting, and because of it, the value returned by the function doesn't make any sense
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted');
+}
+
+// If I type "window" in the console, I can see the global object properties of Javascript, and var variables are added to the global object as a property too
+var x = 1;
+
+// let and const variables aren't added to the global object as properties
+let y = 2;
+const z = 3;
+
+// This returns true if the variable is a property or false if it's not
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);
+
+*/
+///////////////////////////////////////////////////
