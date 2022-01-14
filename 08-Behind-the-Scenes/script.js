@@ -223,3 +223,24 @@ var addArrow = (a, b) => {
 
 */
 ///////////////////////////////////////////////////
+
+// PRIMITIVES VS. OBJECTS (PRIMITIVES VS. REFERENCE TYPES)
+// The 'age' points is created in the call stack
+// The 'age' points to the memory address where it is located, and this address is where the value 30 is stored
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+// The 'me' is created in the call stack
+// The real object is created in the heap memory
+// The 'me' points to the memory address where it is located, and this address points to the heap memory address that points to the real object value
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend', friend);
+console.log('Me', me);
