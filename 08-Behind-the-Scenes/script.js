@@ -244,3 +244,52 @@ const friend = me;
 friend.age = 27;
 console.log('Friend', friend);
 console.log('Me', me);
+
+///////////////////////////////////////////////////
+
+// PRIMITIVES VS. OBJECTS IN PRACTICE (ANOTHER EXAMPLE)
+
+// Primitive types
+// The oldLastName points to the same peece of memory where the name 'willians' is stored
+// The name 'Davis' is created in another peece of memory, and then the lastName variable points to the another peece of memory where the name 'Davis' is stored
+// But the oldLastName variable still pointing to the address with the name "willians"
+let lastName = 'willians';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// Reference types
+// jessica variable points to an address in memory that points to a peece of heap memory that points to the object value
+// marriedJessica points to the same address that the jessica variable points to
+// When a value is mutated in the object value in the heap memory, this value is the same for both the 2 variables that point to it
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Willians',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+//Copying objects
+// Here, an object called jessica2 was created, and then Object.assign creates an empty object '{}' and then assigns the object 'jessica2' inside it, as a copy.
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Willians',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+const jessicaCopy = Object.assign({}, jessica2);
+
+// It's now possible to change a property of one object without mutate the other, even they have the same value
+jessicaCopy.lastName = 'Davis';
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
+
+// But this only works for an object that doesn't have another object inside it.
+// If that is an object inside another, the copying is done superficially, but the two main objects still point to the same sub-object in heap memory.
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log(`${jessica2.firstName}'s family: `, jessica2.family);
+console.log(`${jessicaCopy.firstName}'s family: `, jessicaCopy.family);
