@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +31,49 @@ const restaurant = {
     },
   },
 };
+
+// Here, the x, y and z variables received the values 2, 3 and 4 from the 'arr' array
+const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[3];
+
+// The original array still the same, without modifications
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
+
+// If I want to get the values ​​in an unordered sequence, I just put a space and a comma to skip a value
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+// Switching variables
+// --> Hard way:
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+// Easy way
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+// Receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(`${starter}, ${mainCourse}`);
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+
+// --> This would serve to receive the entire internal array within a single variable:
+// const [i, , j] = nested;
+// console.log(i, j);
+
+// --> This would serve to receive the values ​​of the internal array, each one inside a variable.
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// Default values
+// Here, the variables p and q received the values ​​8 and 9, and as there was no third value to be received, the variable r persisted with the value 1, already defined previously by default.
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
