@@ -293,8 +293,3 @@ jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('John');
 console.log(`${jessica2.firstName}'s family: `, jessica2.family);
 console.log(`${jessicaCopy.firstName}'s family: `, jessicaCopy.family);
-<<<<<<< HEAD
-
-///////////////////////////////////////////////////
-=======
->>>>>>> parent of 253e823... feat: finish to learn Javascript behind the scenes section
