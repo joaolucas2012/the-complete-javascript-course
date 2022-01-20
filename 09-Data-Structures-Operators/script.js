@@ -383,3 +383,59 @@ console.log(guestCorrect);
 
 */
 ///////////////////////////////////////////////////
+
+// Logical assignment operators
+
+/*
+// OR ASSIGNMENT OPERATOR
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// --> This code is the same as above, but simplified
+// --> Here, it is checked whether the restaurant has the property 'numGuests' or not, and in case it doesn't, it receives this property and its value becomes 10.
+// rest1.numGuests ||= 10;
+// rest1.numGuests ||= 10;
+// console.log(rest1);
+// console.log(rest2);
+
+//-------------------------------------------//
+
+// THE LOGICAL NULLISH ASSIGNMENT OPERATOR
+
+// rest1.numGuests = rest1.numGuests ?? 10;
+// rest2.numGuests = rest2.numGuests ?? 10;
+
+// --> This code is the same as above, but simplified
+// It is an example with the nullish coalescing operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+console.log(rest1);
+console.log(rest2);
+
+//-------------------------------------------//
+
+// THE && OPERATORS
+
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// console.log(rest2);
+
+// --> This code is the same as above, but simplified
+// It is an example with the && operator
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+console.log(rest1);
+console.log(rest2);
+
+*/
+///////////////////////////////////////////////////
