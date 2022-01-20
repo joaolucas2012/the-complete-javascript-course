@@ -327,6 +327,7 @@ restaurant.orderPizza('mushrooms');
 
 // SHORT CIRCUITING (&& and ||)
 
+/*
 // && and || operators can use any data type, they can return any data type and they do short-circuiting
 // Short-circuiting with || operator returns:
 // The first value if it is a truthy value, or the second value if the first value is falsy
@@ -359,5 +360,26 @@ if (restaurant.orderPizza) {
 // Returns the first element, if it's false
 // Executes the second element, if the first is true
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'garlic');
+*/
+///////////////////////////////////////////////////
 
+// THE NULLISH COALESCING OPERATOR (??)
+
+/*
+
+// Here, if we are working with real projects, the || operator will fail when the value of restaurant.numGuests is equals to 0
+// Cause it will return 10, and it's not the real situation in real life
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// The solution is the nullish coalescing operator (??)
+
+//--> This operator works with null values, but with a detail: IT DOES NOT CONSIDER EMPTY STRING ('') NOR 0 AS NULL VALUES.
+// --> Only considers null and undefined as null values.
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+// In this case, it returned the value 0, the real value, because it doesn't consider 0 as a null value
+
+*/
 ///////////////////////////////////////////////////
