@@ -27,6 +27,12 @@ const restaurant = {
     );
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -180,4 +186,78 @@ heroStory.story({
   hero2: 1,
 });
 */
+///////////////////////////////////////////////////
+
+// THE SPREAD OPERATOR
+
+const arr = [7, 8, 9];
+// const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArray);
+
+// In the following example, the newArray received all tha values of the arr without write hard code
+// This is the Spread operator
+const newArray = [1, 2, ...arr];
+console.log(newArray);
+
+// To log the individual elements of an array in the console
+console.log(...newArray);
+// console.log(1, 2, 7, 8, 9);
+
+// To get the elements of an array and add another values after them
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+const completeMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(
+  `
+  Starter Menu: ${restaurant.starterMenu}, 
+  Main Menu: ${restaurant.mainMenu}, 
+  Complete Menu: ${completeMenu}
+  `
+);
+
+// The Spread operator works with all the iterables
+// ITERABLES: arrays, strings, maps, sets, NOT objects
+const str = 'João Lucas';
+const letters = [...str, ' ', 'ç'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Ribeiro`); // --> It doesn't work
+
+// Passing a spread array as an argument to a function
+/*
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3?'),
+];
+console.log(ingredients);
+a;
+restaurant.orderPasta(...ingredients);
+*/
+
+/*
+// Exercising
+const doThis = function (arg1, arg2) {
+  console.log(`Do ${arg1} and ${arg2}`);
+};
+const args = ['rice', 'beans'];
+doThis(...args);
+*/
+
+// Objects
+// --> Here, a new object was created that received two new properties more than the original object.
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'James' };
+console.log(newRestaurant);
+
+// To make a copy of an object with the Spread operator
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
 ///////////////////////////////////////////////////
