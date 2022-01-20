@@ -33,6 +33,11 @@ const restaurant = {
     );
   },
 
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(`Main ingredient: ${mainIngredient}`);
+    console.log(`Other ingredients: ${otherIngredients}`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -104,6 +109,8 @@ console.log(p, q, r);
 
 // DESTRUCTURING OBJECTS
 
+/*
+
 // const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
 
@@ -132,6 +139,7 @@ const {
   fri: { open: o, close: c },
 } = hours;
 console.log(o, c);
+*/
 
 /*
 // Exercising
@@ -151,6 +159,7 @@ const {
 console.log(`${n}, ${one}, ${two}`);
 */
 
+/*
 // Calling functions passing an destructured object as a parameter
 restaurant.orderDelivery({
   time: '22:30',
@@ -163,6 +172,7 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   starterIndex: 1,
 });
+*/
 
 /*
 // Exercising
@@ -190,6 +200,7 @@ heroStory.story({
 
 // THE SPREAD OPERATOR
 
+/*
 const arr = [7, 8, 9];
 // const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
 // console.log(badNewArray);
@@ -228,6 +239,8 @@ console.log(letters);
 console.log(...str);
 // console.log(`${...str} Ribeiro`); // --> It doesn't work
 
+*/
+
 // Passing a spread array as an argument to a function
 /*
 const ingredients = [
@@ -249,6 +262,7 @@ const args = ['rice', 'beans'];
 doThis(...args);
 */
 
+/*
 // Objects
 // --> Here, a new object was created that received two new properties more than the original object.
 const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'James' };
@@ -259,5 +273,54 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+*/
+
+///////////////////////////////////////////////////
+
+// REST PATTERN AND PARAMETERS
+/*
+// 1) Destructuring
+// SPREAD, because the ... is on RIGHT side of =
+// const arr = [1, 2, ...[3, 4]];
+
+// REST, because the ... is on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
+
+// const element = {
+//   name: 'James',
+//   age: 12,
+//   comment: 'Nothing to say',
+// };
+// const { name, ...otherThings } = element;
+// console.log(name, otherThings);
+
+// 2) Functions
+const add = function (...numbers) {
+  // console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(2, 3, 4, 5, 6, 7, 8);
+add(2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+*/
 
 ///////////////////////////////////////////////////
