@@ -324,3 +324,40 @@ restaurant.orderPizza('mushrooms');
 */
 
 ///////////////////////////////////////////////////
+
+// SHORT CIRCUITING (&& and ||)
+
+// && and || operators can use any data type, they can return any data type and they do short-circuiting
+// Short-circuiting with || operator returns:
+// The first value if it is a truthy value, or the second value if the first value is falsy
+console.log('------ OR ------');
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+// --> In case there are many values ​​being compared, the || operator returns the first true value it finds, from left to right.
+// --> Here, the value 'Hello' was returned, which was the first non-false value that the || operator found.
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+// --> Short circuit returns the first value if it is false, or returns the last true value it finds if all values ​​are true.
+console.log('------ AND ------');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+// --> If they have many values, it returns the first false value it finds, or it returns the last true value it finds, if all are true.
+console.log('Hello' && 23 && null && 'jonas');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// The same code as above, but with the && operator
+// Returns the first element, if it's false
+// Executes the second element, if the first is true
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'garlic');
+
+///////////////////////////////////////////////////
