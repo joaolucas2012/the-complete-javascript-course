@@ -545,3 +545,18 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team2 < team1 && console.log('Team 2 is more likely to win');
 
 ///////////////////////////////////////////////////
+
+// Looping arrays: the for-of loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+// for (const item of allPlayers) console.log(item);
+
+// To get the index of any value of the array
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+console.log(...menu.entries());
+///////////////////////////////////////////////////
