@@ -1,0 +1,288 @@
+DESESTRUTURANDO ARRAYS:
+
+--> Serve para empacotar partes separadas de um array em diferentes variáveis.
+--> Basta escrever "const[nome, das, variaveis] = [1, 2, 3]". Exemplo:
+const arr = [2,3,4];
+const[x, y, z] = arr;
+console.log(x, y, z);
+
+--> Aqui, as variáveis x, y e z receberam os valores 2, 3 e 4 do array.
+--> Se eu quiser pegar os valores do vetor sem seguir a ordem deles, basta colocar um espaço e uma vírgula, daí isso pula um valor e pega o próximo depois dele:
+
+const [main, , secondary] = restaurant.categories;
+
+PARA TROCAR A ORDEM DOS VALORES NA HORA DE DESESTRUTURAR O ARRAY:
+--> Basta definir um vetor com os valores invertidos e fazer ele receber os valores na ordem invertida.
+--> Exemplo:
+[main, secondary] = [secondary, main];
+
+--> É possível criar uma função para retornar os valores de um vetor já separados e receber esses valores por meio de uma desestruturação de array.
+
+--> Exemplo:
+const arr2 = [3, 7, 0, 5, 'joão'];
+const returnValues = function (ref1, ref2) {
+  return [arr2[ref1], arr2[ref2]];
+};
+const [var1, var2] = returnValues(2, 4);
+console.log(var1, var2);
+
+RECEBER VALORES DE UM VETOR DENTRO DE OUTRO VETOR:
+--> Basta criar a desestruturação de array com outra desestruturação de array dentro dela, para receber o valor do array principal e os valores do array de dentro.
+
+--> Exemplo:
+--> Isso serviria para receber os valores do array interno, cada um dentro de uma variável.
+const nested = [2, 4, [5, 6]];
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+--> Isso serviria para receber o array interno por completo dentro de uma só variável.
+const [i, , j] = nested;
+console.log(i, j);
+
+VALORES PADRÃO:
+--> A desestruturação pode definir valores padrão para uma variável do array, se esse valor não estiver sendo recebido do outro array.
+--> Exemplo:
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
+
+--> Aqui, as variáveis p e q receberam os valores 8 e 9, e como não havia um terceiro valor para ser recebido, a variável r persistiu com o valor 1, já definido anteriormente por padrão.
+//////////////////////////////////////////////////////////////////////////////////
+
+DESESTRUTURANDO OBJETOS:
+
+--> Dá para fazer o mesmo que foi feito nos arrays, é bem parecido.
+--> Basta usar chaves ao invés de colchetes, e dentro das chaves, tenho que colocar o nome exato das propriedades que o objeto tem, que eu quero receber.
+--> Por exemplo, se no objeto tem as propriedades 'nome', 'idade', 'lugar', 'amigos' e 'extras', e eu quero receber só o 'nome', 'amigos' e 'extras', basta digitar:
+const{nome, amigos, extras} = nomeDoObjeto;
+
+--> Aqui, a desestruturação recebeu somente essas 3 propriedades do objeto em questão, e se eu escrever as propriedades fora de ordem, a desestruturação recebe do mesmo jeito.
+
+FAZENDO O MESMO, MAS RENOMEANDO AS PROPRIEDADES NA DESESTRUTURAÇÃO:
+--> Basta digitar:
+const{nome: outroNome, amigos: listaAmigos, extras: extra} = nomeDoObjeto;
+
+
+VALORES PADRÃO:
+--> A desestruturação pode definir valores padrão para uma propriedade do objeto, se esse valor não estiver sendo recebido do objeto.
+--> Exemplo:
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+--> Aqui, a variável menu recebeu o valor '[]', já definido anteriormente por padrão, já que não existia uma propriedade com o nome 'menu' no objeto, por exemplo, e variável starters recebeu o valor "da propriedade certinha" do objeto, já que essa propriedade realmente existe, por exemplo.  
+
+
+MUDANDO O VALOR DE VARIÁVEIS:
+--> Se eu declarei algumas variáveis com let, e assimilei valores à elas, eu posso mudá-las e fazê-las receberem valores de dentro de um objeto.
+--> Pra isso, basta digitar a desestruturação entre parêntesis. Exemplo:
+let a = 111;
+let b = 999;
+const objeto = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+
+FAZENDO O MESMO COM OBJETOS DENTRO DE OUTROS OBJETOS:
+--> Basta colocar chaves dentro de outras chaves para pegar as propriedades do objeto aninhado.
+--> Exemplo:
+
+const NomeDoObjeto = {
+  nome: 'João Lucas',
+  amigos: {
+    fst: 'Jane',
+    snd: 'Leticia',
+    trd: 'Marcos',
+  },
+};
+
+const {
+  nome: n, 
+  amigos: { fst: um, trd: dois },
+} = NomeDoObjeto;
+console.log(`${n}, ${um}, ${dois}`);
+
+--> Posso também renomear essas propriedades conforme recebo os valores de forma aninhada, como mostrado acima.
+
+
+CHAMANDO UMA FUNÇÃO QUE RECEBE UM OBJETO DESESTRUTURADO COMO PARÂMETRO:
+--> Basta seguir a seguinte sintaxe:
+const heroStory = {
+  heroes: ['Ben 10', 'Omniman', 'Generator Rex'],
+  story: function ({ hero1, hero2, place = 'some place in this city' }) {
+    console.log(
+      `Oh my God! ${this.heroes[hero1]} and ${this.heroes[hero2]} are fighting at ${place}.`
+    );
+  },
+};
+
+--> Ali, story é uma propriedade que recebe uma função. Essa função recebe um objeto desestruturado como argumento. Ela pega os valores tirados do objeto e usa eles pra fazer uma busca dentro objeto HeroStory e montar uma frase com esses valores. Dá pra definir valores padrão para os argumentos da função, como mostrado acima.
+
+--> Para chamar a função, basta digitar:
+heroStory.story({
+  hero1: 0,
+  hero2: 2,
+  place: 'New York',
+});
+
+heroStory.story({
+  hero1: 2,
+  hero2: 1,
+});
+
+--> Ali, eu tenho que passar os dois primeiros valores obrigatoriamente, mas o terceiro valor não preciso passar, ele pode receber o valor padrão mesmo, definido já pela função.
+//////////////////////////////////////////////////////////////////////////////////
+
+O OPERADOR SPREAD: Só serve pra quando passamos argumentos em uma função ou declaramos um novo array.
+
+--> Esse operador serve pra copiar elementos de um array dentro de outro array sem precisar de escrever muito código.
+--> Basta criar um array e adicionar "..." e depois o nome do outro array.
+--> Exemplo:
+const array1 = [1, 2, 3];
+const arrayMaior = [5, 6, 7, ...array1];
+--> Aqui, o arrayMaior recebeu todos os valores do array1 a partir do operador Spread.
+
+
+PARA LOGAR OS VALORES INDIVIDUAIS DE UM ARRAY FORA DO ARRAY:
+--> Basta digitar:
+console.log(...nomeDoArray);
+
+PARA EXPANDIR UM ARRAY COLOCANDO NOVOS ELEMENTOS NELE:
+--> Basta digitar:
+const newArray = [...nomeDoArray, 'Novo elemento', numero, 3, etc];
+--> Ali, todos os últimos valores foram somados após os valores do outro array inicial, similar ao método push().
+--> Um novo array foi criado, isso sem alterar os valores do array inicial.
+
+PARA COPIAR UM ARRAY:
+--> Basta digitar:
+const copyArray = [...nomeDoOutroArray];
+
+PARA JUNTAR DOIS ARRAYS:
+--> Basta digitar:
+const arraysJuntos = [...primeiroArray, segundoArray];
+
+O OPERADOR SPREAD SERVE PRA QUALQUER COISA ITERÁVEL:
+--> Os iteráveis são: arrays, strings, maps, sets.
+--> Objetos não são iteráveis.
+--> Isso quer dizer que posso criar um array com todas as letras separadas de uma string, e posso fazer as operações de junção, expansão ou cópia nessa string.
+--> O mesmo vale para os maps e sets.
+
+PARA ESCREVER UMA FRASE DENTRO DE UM ARRAY COM UM ':
+const arr = ['Let\'s make pasta!'];
+--> Aqui, o \ é entendido como um aviso de que a string não acabou.
+
+PARA PASSAR UM ARRAY ESPANDIDO A UMA FUNÇÃO:
+--> Supondo que eu crie uma função que recebe mais de um elemento:
+const doThis = function(arg1, arg2){
+   console.log(`Do ${arg1} and ${arg2}`);
+}
+--> Posso declarar um vetor com esses dois elementos e passar com o operador Spread como argumento à função:
+const args = ['arroz', 'feijão'];
+doThis(...args);
+
+PARA DUPLICAR UM OBJETO E AUMENTAR ELE COM OUTRAS PROPRIEDADES:
+const newObject = {prop: 'alguma coisa', ...nomeDoOutroObjeto, prop2: 'Outra coisa'};
+--> Aqui, foi criado um novo objeto que recebeu duas novas propriedades a mais do que o objeto original.
+
+PARA FAZER UM CÓPIA DE UM OBJETO:
+const copia = {...nomeDoOutroObjeto};
+//////////////////////////////////////////////////////////////////////////////////
+
+PADRÃO DO RESTO E PARÂMETROS: Isso simplesmente cria um vetor e pega o resto dos valores que sobrarem após uma determinada desestruturação de vetor. 
+
+--> Enquanto na desestruturação, os valores de um vetor são desempacotados, no padrão do resto, os valores voltam a ser empacotados dentro de um vetor.
+--> Isso precisa estar sempre à direita de todos os outros valores ou parâmetros de uma função, já que ele pega o resto dos valores que sobraram, e por isso tem que ser declarado sempre por último.
+
+1) COM DESESTRUTURAÇÃO:
+--> Ele é quase igual ao Spread, só que ele fica do lado esquerdo do "=".
+const [a, b, ...others] = [1, 2, 3, 4];
+--> Aqui, as variáveis a e b receberam os valores 1 e 2, enquanto o others é um vetor que armazenou os valores 3 e 4.
+
+--> Também dá pra fazer:
+const [a, , b, ...outros] = [1, 2, 3, 4, 5];
+--> Aqui, a variável a recebeu o 1, a variável b recebeu o 3 (pulou um valor), e foi criado um vetor de nome "outros" que recebeu os valores 4 e 5.
+
+--> Com objetos:
+const elemento = {
+   nome: 'James',
+   idade: 12,
+   comentario: 'Nada a declarar',
+};
+const {nome, ...others} = elemento;
+
+2) COM FUNÇÕES:
+--> É possível passar inúmeros argumentos a uma função sem definir o número exato de parâmetros que essa função precisa.
+const fun = function(...valores){
+  console.log(valores);
+}
+
+fun(1, 2, 3, 4, 6, 7, 89, 765, 4321);
+fun(...[3, 5, 67]);
+--> Aqui, o 3, 5 e 67 foram desempacotados com a desestruturação de vetor, e mandados como argumentos para a função fun(), que por sua vez, empacotou esses valores de novo dentro de um vetor nomeado como "valores".
+//////////////////////////////////////////////////////////////////////////////////
+
+CURTO-CIRCUITO (&& e ||): Os operadores $$ e || não precisam ser usados somente com valores booleanos, dá pra usar com qualquer coisa.
+
+OPERADOR ||:
+--> O curto-circuito retorna o primeiro valor, se ele for verdadeiro, ou retorna o segundo valor se o primeiro não for verdadeiro.
+--> Se o primeiro não for verdadeiro, ele retorna o segundo valor, mesmo que o segundo valor também seja falso.
+
+--> No caso de terem muitos valores sendo comparados, o operador || retorna o primeiro valor verdadeiro que ele encontrar, da esquerda para a direita.
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+--> Aqui, foi retornado o valor 'Hello', que foi o primeiro valor não falso que o operador || encontrou.
+
+
+OPERADOR &&:
+--> O curto-circuito retorna o primeiro valor, se ele for falso, ou retorna o último valor verdadeiro que ele encontrar, se todos os valores forem verdadeiros.
+--> Se tiverem muitos valores, ele retorna o primeiro valor falso que ele encontrar, ou retorna o último valor verdadeiro que ele encontrar, se todos forem verdadeiros.
+//////////////////////////////////////////////////////////////////////////////////
+
+O OPERADOR DE COALESCIMENTO NULO (??):
+
+--> Esse operador trabalha com valores nulos, mas com um detalhe: ele não considera string vazia ('') e nem o 0 como valores nulos.
+--> Considera apenas o null e o undefined como valores nulos.
+--> Sintaxe:
+primeiroValor ?? segundoValor;
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+--> Nesse caso, retornou o valor 0, pois não considera 0 como valor nulo.
+//////////////////////////////////////////////////////////////////////////////////
+
+OPERADORES DE ATRIBUIÇÃO LÓGICA:
+
+OPERADOR ||=:
+--> Esse operador é quase igual ao +=, ele ajuda a não repetir o nome de uma mesma variável em uma comparação com o operador ||.
+   const restaurante.clientes ||= 10;
+--> Aqui, é verificado se o restaurante tem a propriedade 'clientes' ou não, e no caso de não ter, ele recebe essa propriedade e seu valor passa a ser 10.
+--> Dá no mesmo do que escrever:
+   const restaurante.clientes = restaurante.clientes || 10;
+--> A propriedade restaurante.clientes recebe ela mesmo (se já existir valor pra ela) ou 10 (ela é criada e recebe o valor 10).
+
+
+OPERADOR ??=:
+--> Esse operador faz quase o mesmo que o anterior, mas trabalha com o coalescimento nulo.
+   const restaurante.clientes ??= 10;
+--> Dá no mesmo do que escrever:
+   const restaurante.clientes = restaurante.clientes ?? 10;
+
+//////////////////////////////////////////////////////////////////////////////////
+
+LOOPING ARRAYS: O FOR-OF LOOP
+
+--> Basta escrever:
+ for (const item of nomeDoArray) console.log(item);
+--> Isso varre todo o array e printa todos os valores dele, um a um, sendo que o item é o valor da posição atual do array em cada iteração.
+--> Nessa opção, não é possível usar o break e o continue.
+
+--> Se eu quiser pegar os índices dos valores do array, basta escrever:
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+--> Aqui, o método entries() pega todas as entradas do array.
+--> O i recebeu o índice do valor dentro do vetor, e o el recebeu o valor armazenado nessa posição.
+
+console.log(...menu.entries());
+//////////////////////////////////////////////////////////////////////////////////
