@@ -1,0 +1,42 @@
+ESTRUTURA BÁSICA E ELEMENTOS:
+--> Sempre começa com a tag html, dentro dela tem a head e depois no final tem o body.
+--> Escrever um "!" e dar enter, daí essa estrutura aparece automaticamente.
+//////////////////////////////////////////////////////////////////////
+
+ATRIBUTOS, CLASSES E IDS:
+--> Atributos descrevem elementos.
+--> Classes podem ser usadas em vários elementos.
+--> Ids são únicos, servem para identificar elementos para estilizar.
+
+HTML SEMÂNTICO:
+--> É o uso de tags que melhor descrevem o elemento que elas comportam.
+--> Um exemplo é a tag <form> que serviria para indicar que ela contém um formulário dentro dela, ao contrário da <div>, que não indicaria isso explicitamente.
+//////////////////////////////////////////////////////////////////////
+
+ESTILIZAÇÃO BÁSICA COM CSS:
+--> Linkar o style.css no html:
+<link rel="stylesheet" href="style.css">
+
+--> Precisa colocar dentro da tag <head>.
+--> Selecionar classes - usa o . antes do nome da classe:
+.class-name{atributos}
+
+--> Selecionar ids - usa o # antes do nome do id:
+#id-name{atrubutos}
+//////////////////////////////////////////////////////////////////////
+
+INTRODUÇÃO AO CSS BOX MODEL:
+--> Todos os elementos possuem espaçamento, alguns recebem isso como padrão.
+
+GLOBAL RESET: Reseta todos os padrões de tamanho e largura dos elementos.
+--> A * seleciona todos os elementos do HTML.
+--> Basta escrever:
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+--> padding: adiciona algum espaço fora do elemento, mas dentro da caixa.
+--> border: adiciona borda à caixa.
+--> margin: adiciona margem do lado de fora da caixa.
