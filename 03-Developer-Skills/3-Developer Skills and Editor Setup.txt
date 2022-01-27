@@ -1,0 +1,94 @@
+CONFIGURANDO O PRETTIER NO VS CODE:
+--> Basta ir nas extensões do VS code e pesquisar pela extensão "Prettier", e ativar ela.
+--> Serve para formatar automaticamente o texto.
+--> Transforma todas as aspas simples em aspas duplas.
+
+ENTRAR NO SITE DO PRETTIER E VER AS OPÇÕES:
+https://prettier.io/docs/en/options.html
+
+SETAR AS ASPAS SIMPLES COMO PADRÃO:
+--> Basta criar um novo arquivo chamado .prettierrc, e escrever:
+{
+	"singleQuote": true
+}
+
+SETAR A ARROW FUNCTION PRA NÃO ADICIONAR PARÊNTESES NO ARGUMENTO:
+--> No arquivo .prettierrc, basta escrever:
+{
+	"arrowParens": "avoid"
+}
+
+SETAR UM ATALHO PARA O CONSOLE.LOG();:
+--> Ir em Preferências, "User Snippets", adicionar um novo snippets global, escolher um nome, e depois colocar:
+
+"Print to console": {
+  "scope": "javascript,typescript",
+  "prefix": "log",
+  "body": ["console.log();"],
+  "description": "Log output to console"
+}
+
+--> Toda vez que eu escrever "log", eu posso pressionar enter e isso vai ser reescrito por "console.log();".
+**********************************************************************
+INSTALANDO NODE.JS E CONDIGURANDO UM AMBIENTE DEV:
+
+--> Existem duas formas de recarregar a página na web automaticamente.
+--> A primeira é instalando a extensão Live Server no VS Code.
+--> A segunda é instalando o Node.JS (opção mais profissional).
+
+DESCOBRIR A VERSÃO DO NODE.JS QUE TENHO INSTALADA:
+--> Basta abrir o terminal e digitar:
+node -v
+
+INSTALAR O LIVE SERVER NO TERMINAL:
+--> Basta ir no terminal e digitar:
+npm install live-server -g
+--> Se for no MAC, tem que digitar:
+sudo npm install live-server -g
+
+PARA USAR O LIVE SERVER VIA TERMINAL:
+--> Basta ir no terminal e digitar:
+live-server
+
+PARA FECHAR O LIVE SERVER VIA TERMINAL:
+--> Basta ir no terminal e pressionar Ctrl C.
+
+EXPLICAÇÃO SOBRE A INSTALAÇÃO:
+--> npm é o Node Package Manager, um programa pra baixar ferramentas.
+--> Depois vem o install, que é o comando pra instalar algo.
+--> Depois vem o nome da ferramenta que queremos instalar.
+--> -g quer dizer que a ferramenta deve ser instalada globalmente.
+**********************************************************************
+APRENDENDO COMO CODAR:
+
+--> Estudar cursos, entender o código, fazer desafios e notas.
+--> Me manter motivado, continuar escrevendo meus próprios códigos, sem me importar se estão ruins.
+--> Aprender com outras pessoas, devs e iniciantes, e compartilhar o progresso.
+--> Continuar me desafiando, resolvendo muitos problemas, consertando eles.
+--> Aumentar minhas habilidades com melhores práticas e ferramentas (git, testando, ...).
+--> Pronto para o trabalho (mas o aprendizado nunca acaba).
+**********************************************************************
+COMO PENSAR COMO UM DESENVOLVEDOR:
+
+--> Ter certeza de que entendi 100% do problema, fazer as perguntas certas para ter uma imagem clara do problema.
+--> Dividir um problema grande em sub-problemas pequenos.
+--> Não ficar com medo de pesquisar mais do que eu deveria.
+--> Para problemas grandes, escrever pseudo-códigos antes de escrever o código atual.
+
+--> Ter uma curiosidade genuína sobre como todas as coisas funcionam.
+**********************************************************************
+DEBUGGING (CONSERTAR ERROS):
+--> Identificar o bug, encontrar o bug, consertar o bug e prevenir novos bugs parecidos.
+--> Dá para ver os bugs no terminal.
+**********************************************************************
+DEBIGGING COM O CONSOLE E BREAKEPOINTS:
+--> console.warn(); e console.error(); são formas de formatação de um valor no console.
+--> console.table(objeto); formata os valores do objeto como uma tabela ao exibir no console.
+
+COMO USAR O DEBUGGER NO GOOGLE CHROME:
+--> Ir em "resources" e clicar no "script.js".
+--> Clicar na esquerda da numeração de linhas do código, isso faz aparecer uma bolinha vermelha, que é um breakpoint.
+--> Posso rodar o código e ele vai parar no breakpoint, posso ir vendo os resultados do código até então e daí prevenir possíveis erros.
+
+--> Se eu digitar "debugger;" no código, isso vai abrir automaticamente o debugger no Chrome, no exato ponto que eu chamei ele.
+**********************************************************************
