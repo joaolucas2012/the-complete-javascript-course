@@ -1,0 +1,280 @@
+UMA VISÃO GERAL DE ALTO NÍVEL DO JAVASCRIPT:
+
+LINGUAGEM DE ALTO NÍVEL:
+--> O desenvolvedor não precisa solicitar memória ou outros recursos do PC na hora de programar, isso é feito automaticamente.
+
+LIXO É COLETADO: 
+--> O Javascript remove da memória todos os objetos antigos que não estão sendo usados automaticamente.
+
+LINGUAGEM INTERPRETADA OU COMPILADA NA HORA CERTA (JUST-IN-TIME):
+--> Ela só entende 0's e 1's, a linguagem de máquina.
+--> A programação é feita e compilada em 0's e 1's para a máquina entender.
+
+MULTI-PARADIGMAS:
+--> É uma uma abordagem e mentalidade que nos direciona a nossa técnica e estilo de código.
+
+1-PROCEDURAL PROGRAMMING: Organizar o código de forma linear e depois com algumas funções entre ele.
+
+2-OBJECT-ORIENTED-PROGRAMMING (OOP).
+
+3-FUNCTIONAL PROGRAMMING (FP).
+
+ORIENTADO A OBJETOS BASEADO EM PROTÓTIPO:
+--> Quase tudo no Javascript é um objeto, exceto valores primitivos, como números, strings, etc.
+--> Quando criamos vetores e algo assim, esses objetos são protótipos, que herdam os métodos específicos que podem ser aplicados à ele, como o push, indexOf, etc.
+
+FUNÇÕES DE PRIMEIRA CLASSE:
+--> As funções são simplesmente tratadas como variáveis.
+--> Podemos passar elas em outras funções e retornar funções através de funções.
+
+LINGUAGEM DINÂMICA:
+--> É tipada dinamicamente, não é necessário definir o tipo de uma variável, e o tipo pode ser mudado automaticamente.
+--> O tipo só é descoberto quando o Javascript executa nosso código.
+
+THREAD ÚNICO:
+--> É como Javascript resolve várias tarefas acontecendo ao mesmo tempo.
+--> Javascript resolve apenas uma coisa por vez.
+--> Por isso precisamos de um caminho pra manusear múltiplas tarefas acontecendo ao mesmo tempo.
+--> A thread é onde o código é executado por uma sequência de tarefas no processador do computador.
+--> Para evitar o bloqueio por causa de muitas tarefas ao mesmo tempo, o event loop realiza longas tarefas no fundo e traz elas na thread principal quando elas são finalizadas.
+//////////////////////////////////////////////////////////////////////
+
+MECANISMO JAVASCRIPT E TEMPO DE EXECUÇÃO:
+--> Seu mecanismo é um programa que executa o código Javascript.
+--> Cada navegador possui seu mecanismo que executa códigos Javascript, como o Google possui o V8 Engine.
+--> O mecanismo Javascript possui uma call stack e um heap.
+--> Call stack é onde o código é executado em um contexto de execução.
+--> Heap é onde os objetos são armazenados na memória do computador.
+
+DIFERENÇA ENTRE COMPILAÇÃO E INTERPRETAÇÃO:
+--> Compilação é quando o código inteiro é transformado em linguagem de máquina e escrito em um arquivo binário que pode ser executado por um computador.
+--> Interpretação é quando o interpretador roda o código e o executa linha por linha.
+
+O QUE DEFINE O JAVASCRIPT:
+--> O Javascript moderno é uma mistura entre compilação e interpretação, chamada de Just-in-time compilation (compilação na hora certa).
+--> O código inteiro é convertido em linguagem de máquina uma vez e depois é executado imediatamente.
+
+COMO O CÓDIGO JAVASCRIPT É EXECUTADO:
+--> Primeiro ele passa por um processo de parsing (análise), no qual são analisadas as funções, variáveis e o código em geral.
+--> Essas coisas são estruturadas em uma abstract sintax tree (árvore de sintaxe abstrata), que quebra cada linha em pedaços e armazena na árvore num jeito estruturado, e checa se tem algum erro de sintaxe.
+--> A árvore resultante será usada depois pra gerar o código de máquina.
+
+--> Segundo, ele passa pelo processo de compilação, no qual a árvore AST é transformada em código de máquina.
+
+--> Terceiro, o código de máquina resultante será executado imediatamente, e acontece na call stack.
+--> O Javascript cria um código não otimizado para começar a execução mais rápido, e conforme o processo continua, o código é otimizado durante a execução.
+--> Esse processo é que torna o mecanismo Javascript tão rápido.
+
+O QUE É O RUN TIME:
+--> No browser, é como se fosse uma caixa com todas as coisas necessárias para usar o Javascript.
+--> O coração disso é o mecanismo Javascript (JS Engine).
+--> Run time e JS engine estão interligados, precisam um do outro pra funcionar.
+//////////////////////////////////////////////////////////////////////
+
+CONTEXTOS DE EXECUÇÃO E A PILHA DE CHAMADAS:
+--> Depois que o código é compilado, a execução será iniciada, executando somente o código que estiver fora das funções.
+--> O código dentro das funções só será executado quando as funções forem chamadas.
+
+O QUE ESTÁ DENTRO DO CONTEXTO DE EXECUÇÃO:
+--> O ambiente variável: onde estão as declarações de variáveis, funções e objeto de argumentos.
+--> A cadeia de escopo: referencia as variáveis que estão fora da função atual.
+--> A this keyword: 
+--> As arrow functions não possuem objeto de argumentos e nem a this keyword.
+
+COMO ACONTECE:
+--> O que é executado globalmente é executado primeiro na call stack, depois é executado o restante das funções, uma a um em ordem de chamada, na pilha da call stack.
+--> Cada nova execução fica no topo da lista de execução da call stack.
+
+//////////////////////////////////////////////////////////////////////
+
+CADEIA DE ESCOPO (SCOPE CHAIN):
+--> Escopo é o espaço ou ambiente no qual uma certa variável é declarada. Tem um escopo global, escopo de funções e escopo de blocos.
+--> Cadeia de escopo é como as variáveis do programa são organizadas e acessadas pelo mecanismo do Javascript.
+--> No Escopo Léxico, o escopo é controlado pelo posicionamento das funções e blocos no código.
+--> Escopo de variável é a região do código onde uma certa variável pode ser acessada.
+--> Numa função dentro de outra função, a função filha pode acessar as variáveis da função mãe, e também podem ser acessadas as variáveis do escopo global.
+--> Isso só funciona de cima pra baixo. As funções filhas não podem acessar variáveis das funções mães.
+--> Funções declaradas dentro de uma função só são irmãs, cada irmã pode acessar variáveis da função mãe, mas uma irmã não pode acessar variáveis da outra.
+
+ESCOPO GLOBAL:
+--> Código de alto nível, é o código que está fora de qualquer função ou bloco.
+--> Suas variáveis podem ser acessadas em qualquer lugar.
+
+ESCOPO DE FUNÇÕES:
+--> As variáveis só poderão ser acessadas dentro das funções onde elas estão.
+--> Suas variáveis são chamadas de variáveis locais.
+
+ESCOPO DE BLOCO (ES6):
+--> As variáveis só serão acessadas dentro do bloco de código, separado por chaves.
+--> Isso só se aplica a variáveis let e const!
+
+CADEIA DE ESCOPO VS CALL STACK:
+--> A cadeia de escopo é ordenada da seguinte forma:
+- Primeiro vem o escopo global, com variáveis e funções globais.
+- Tudo que é declarado de funções no escopo global são como filhas do escopo global.
+- Uma função não pode acessar variáveis de outra função do mesmo escopo, pois são irmãs.
+- Funções declaradas dentro de outra função têm acesso à recursos da função mãe e do escopo global, mas não acessam recursos se são irmãs.
+- Dentro de cada função se cria um novo escopo, o escopo de função.
+
+--> Na call stack, as execuções se ordenam da seguinte forma:
+- Primeiro vem os comandos do escopo global, declarações globais, em ordem.
+- Depois que uma função é chamada, serão executados os comandos dentro dessa função, linha por linha.
+- Se dentro dessa função é chamada outra função, serão executados linha a linha os comandos dessa outra função, para depois o restanta da função anterior ser executado. 
+//////////////////////////////////////////////////////////////////////
+
+AMBIENTE VARIÁVEL: IÇAMENTO E TDZ:
+
+IÇAMENTO:
+--> Faz alguns tipos de variáveis serem acessíveis e úteis no código antes delas serem declaradas. "As variáveis são elevadas ao topo de seu escopo.
+--> O código é escaneado para declarações de variáveis, e para cada variável, uma nova propriedade é criada no objeto ambiente variável.
+
+DECLARAÇÕES DE FUNÇÕES:
+--> Elas são içadas, pois podem ser usadas antes delas serem declaradas no código.
+
+VAR VARIÁVEIS:
+--> Elas são içadas, podem ser usadas antes de serem declaradas, mas seu valor é indefinido.
+--> É um dos bugs do Javascript, por isso é melhor evitá-las.
+
+VARIÁVEIS LET E CONST:
+--> Elas são içadas, mas não na prática, seu valor é dado como não inicializado, e não podem ser usadas antes de serem declaradas.
+--> Ficam na chamada TDZ (Temporal Dead Zone).
+
+EXPRESSÕES FUNÇÕES E ARROW FUNCTIONS:
+--> Depende de que variáveis são implementadas dentro dela.
+--> Se forem let e const, não são içadas, se forem var, são içadas e seu valor é indefinido.
+--> Por isso não podem ser usadas antes de serem declaradas.
+//////////////////////////////////////////////////////////////////////
+
+IÇAMENTO E TDZ NA PRÁTICA:
+--> Se eu for no console e digitar "window", eu posso acessar as propriedades do objeto global do Javascript gerado no browser.
+--> Se eu declarei alguma variável var no código, essa variável será adicionada como uma propriedade no objeto global do Javascript, e isso não acontece com let e const.
+
+BOAS PRÁTICAS DA PROGRAMAÇÃO EM RELAÇÃO AO IÇAMENTO:
+--> Sempre declarar variáveis globais no topo do código.
+--> Sempre declarar funções no topo do código e depois chamá-las mais abaixo.
+--> Nunca usar variáveis var, pois elas dão muitos bugs pelo modo como são içadas sempre dar a elas o valor indefinido quando elas estão na temporal dead zone.
+//////////////////////////////////////////////////////////////////////
+
+A THIS KEYWORD/VARIÁVEL:
+--> É uma variável especial que é criada para todo contexto de execução (toda função).
+--> Pega o valor (aponta para) o dono da função na qual a this keyword é usada.
+--> this não é estático, isso depende de como a função é chamada e seu valor é somente passado quando a função é chamada.
+
+QUANDO USAMOS UM MÉTODO EM UMA FUNÇÃO:
+--> A this keyword aponta para o objeto que está chamando o método.
+--> Se temos um objeto:
+const joaoLucas = {
+   name: 'João Lucas',
+   year: 2000,
+   calcAge: function(){
+      return 2037 - this.year
+   }
+};
+joaoLucas.calcAge();
+--> Aqui, a this keyword aponta para o objeto joaoLucas.
+--> Arrow functions não têm sua própria this keyword.
+
+EVENT LISTENER:
+--> A this keyword vai sempre apontar para o elemento do DOM no qual a handler está anexada.
+
+IMPORTANTE SABER:
+--> O this não aponta para a própria função e não aponta para o seu ambiente variável!
+//////////////////////////////////////////////////////////////////////
+
+A THIS KEYWORD EM PRÁTICA:
+--> Se eu digitar console.log(this); a this keyword aponta para a janela do objeto Javascript (window).
+
+FUNÇÕES NORMAIS NO STRICT MODE:
+--> O this aponta para indefinido.
+--> Elas possuem sua própria this keyword, mas ela aponta sempre para indefinido.
+
+ARROW FUNCTIONS NO STRICT MODE:
+--> O this aponta para a função mãe, ou escopo mãe.
+--> Se a arrow function é declarada no escopo global, a this keyword aponta para o escopo global, e isso chama a window do Javascript.
+
+MÉTODOS:
+--> O this aponta para o objeto que está chamando o método.
+--> No caso, ele não aponta para o nome do objeto em si (const nome do objeto = {bla bla}), ele aponta para o objeto que está chamando aquele método do objeto verdadeiro.
+--> No caso, se digito "joaoLucas.calcAge();", o this aponta para o joaoLucas que chamou o método calcAge(), e não para o object joaoLucas no qual o calcAge() foi de fato declarado.
+//////////////////////////////////////////////////////////////////////
+
+FUNÇÕES NORMAIS VS ARROW FUNCTIONS NA PRÁTICA:
+
+--> Um objeto não tem seu próprio escopo, é simplesmente a maneira como ele é declarado literalmente.
+--> Quando tentamos obter uma propriedade de objeto que não existe, ela retornará indefinido.
+
+NUNCA USAR UMA ARROW FUNCTION COMO MÉTODO:
+--> A this keyword dela aponta para o escopo acima dela, e se for o escopo global, isso aponta para as propriedades dele ao invés das do objeto.
+
+FUNÇÃO DENTRO DE FUNÇÃO EM UM OBJETO:
+--> Se eu for declarar uma função dentro de outra num objeto, essa segunda função deve ser uma arrow function, caso eu decisa usar a this keyword.
+--> Já que a arrow funtion não tem this keyword apontando pra ela mesma, ela vai apontar pra this keyword da função na qual ela foi declarada (parent scope).
+
+ARGUMENTS KEYWORD:
+--> É uma palavra chave que posso colocar como parâmetro em console.log() para saber quais os argumentos uma função recebeu:
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+
+--> Retorna um vetor com os argumentos fornecidos para a função.
+//////////////////////////////////////////////////////////////////////
+
+PRIMITIVOS VS. OBJETOS (PRIMITIVOS VS. TIPOS DE REFERÊNCIA):
+
+--> Primitivos são números, strings, booleanos, indefinido, Null, symbol e BigInt.
+--> Objetos são Object literal, arrays, funções, etc.
+--> Na memória, os primitivos são classificados como tipos primitivos e os objetos são os tipos de referência.
+
+PRIMITIVOS NA MEMÓRIA:
+--> Quando eles são declarados, exemplo (let age = 30), um identificador na call stack é criado com o mesmo nome da variável (age, nesse caso).
+--> Esse identificador alocará um espaço na memória do PC e esse endereço alocado conterá o valor 30.
+--> Então, a variável aponta para o local na memória no qual está o valor 30.
+
+OBJETOS NA MEMÓRIA:
+--> Quando eles são declarados, é criado um identificador na call stack com o nome do objeto, enquando o objeto em si será criado na heap, com outro endereço, e é lá que o valor do objeto ficará armazenado.
+--> O identificador com o nome do objeto na call stack apontará para o endereço da memória em que ele está, e esse endereço apontará para o outro endereço no qual está armazenado o valor do objeto.
+--> Isso acontece porque o objeto é muito grande pra ser armazenado na call stack, e por isso ele é armazenado na heap.
+//////////////////////////////////////////////////////////////////////
+
+PRIMITIVOS VS. OBJETOS (PRIMITIVOS VS. TIPOS DE REFERÊNCIA) NA PRÁTICA:
+
+PRIMITIVOS:
+let lastName = 'willians';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+--> O oldLastName aponta para o mesmo pedaço de memória onde o nome 'willians' está armazenado
+--> O nome 'Davis' é criado em outro pedaço de memória, e então a variável lastName aponta para outro pedaço de memória onde o nome 'Davis' está armazenado
+--> Mas a variável oldLastName ainda aponta para o endereço com o nome "willians"
+
+
+OBJETOS:
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Willians',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+--> A variável jessica aponta para um endereço na memória que aponta para um pedaço de memória heap que aponta para o valor do objeto.
+--> marriedJessica aponta para o mesmo endereço que a variável jessica aponta.
+--> Quando um valor é modificado no valor do objeto na memória heap, esse valor é o mesmo para as duas variáveis que apontam para ele.
+
+COPIAR UM OBJETO DENTRO DE OUTRO:
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Willians',
+  age: 27,
+};
+const jessicaCopy = Object.assign({}, jessica2);
+
+--> Aqui, foi criado um objeto chamado jessica2, e depois o Object.assign cria um objeto vazio '{}' e depois atribui o objeto 'jessica2' dentro dele, como uma cópia.
+--> Isso só funciona para um objeto que não possua outro objeto dentro dele.
+--> Se tiver um objeto dentro do outro, a cópia é feita de forma rasa, mas os dois objetos principais continuam somente apontando para o mesmo sub-objeto na memória heap.
