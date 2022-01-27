@@ -1,0 +1,238 @@
+Curso de Javascript:
+
+**********************************************************************
+TESTE NO BROWSER DO GOOGLE:
+PARA ACESSAR --> usa CTRL ALT J e entra na opção CONSOLE
+
+Testes:
+alert("Hello world")
+
+Declaração de variáveis:
+let js = 'amazing'
+if(js === 'amazing') alert('js is fun!')
+
+**********************************************************************
+O PAPEL DO JAVASCRIPT:
+HTML: usa nomes (<p></p> significa parágrafo, etc)
+CSS: usa adjetivos (p {color: red} significa "parágrafo é vermelho")
+JS> usa verbos (p.hide significa esconder o parágrafo)
+**********************************************************************
+FUNDAMENTOS DO JAVASCRIPT:
+
+*PRA RODAR ALGO NO CONSOLE: 
+console.log(alguma coisa);
+--> console.log("Jonas");
+--> console.log(23);
+
+*PARA RODAR MAIS DE UMA COISA:
+--> console.log("umaCoisa", "OutraCoisa");
+console.log(age, birth);
+
+*PRA LINKAR O ARQUIVO JS COM O HTML:
+--> Colocar no final da tag body
+<script src="script.js"></script>
+
+**********************************************************************
+DECLARAR VALORES E VARIÁVEIS:
+let firstName = "Jonas";
+let number = 67;
+
+--> Dá para declarar mais de uma variável por vez:
+const i, j, k;
+**********************************************************************
+VALORES E OBJETOS:
+--> Valores podem ser objetos:
+let me{
+  name: 'Jonas';
+  age: 30;
+};
+
+--> Valores podem ser primitivos:
+let firstName = 'Jonas';
+let age = '30';
+**********************************************************************
+7 TIPOS DE DADOS:
+NUMBER: usado para decimais e inteiros.
+STRING: sequência de caracteres, usado para texto.
+Boolean: tipo lógico, usado para true ou false.
+UNDEFINED: valor lógico para variável com valor não declarado.
+NULL: valor vazio.
+SYMBOL (ES2015): valor único que não pode ser alterado.
+BIGINT (ES2020): inteiros maiores do que os que o NUMBER pode suportar.
+**********************************************************************
+DESCOBRIR O TIPO DE DADO DA VARIÁVEL:
+--> Usar o typeof
+console.log(typeof true);
+console.log(typeof 23);
+
+MUDAR O TIPO DE UMA VARIÁVEL JÁ EXISTENTE:
+--> Repetir o nome da variável e atribuir outro valor a ela
+firstName = 'Emanuel';
+**********************************************************************
+LET, CONST E VAR:
+--> Usar let para declarar variáveis que podem mudar mais tarde
+--> Para declarar variáveis vazias
+let age = 30;
+age = 31;
+
+--> Usar const para declarar variáveis que não podem mudar de valor
+--> Recomendado usar const como padrão, e let só quando o valor for mudar
+const birthYear = 1991;
+
+--> var é uma forma antiga de declarar variáveis, é parecido com let
+--> Também dá pra mudar o valor da variável usando var
+--> Nunca usar var
+var job = 'teacher';
+job = 'programmer';
+**********************************************************************
+VARIÁVEIS TAMBÉM NÃO PRECISAM SER DECLARADAS SE EU NÃO QUISER
+--> Basta apenas colocar o nome da variável e o valor dela
+--> Não é nada recomendável
+lastName = 'Ribeiro';
+**********************************************************************
+OPERADORES:
+--> Operadores permitem transformar ou combinar múltiplos valores
+
+TIPOS DE OPERADORES:
+--> Operadores matemáticos (divisão, multiplicação, etc)
+Dois asteriscos significam exponenciação
+2 ** 3 quer dizer 2 elevado a 3
+
+CONCATENAR STRINGS:
+console.log(string1 + string2);
+**********************************************************************
+PRECEDÊNCIA DE OPERADORES:
+--> A precedência de operadores determina a ordem em que os operadores são processados. Operadores com maior precedência são processados primeiro.
+--> Site para ver isso: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+**********************************************************************
+TEMPLATE LITERALS:
+--> Pode juntar múltiplas partes em uma string.
+--> Colocar a frase entre os símbolos ``.
+--> Colocar variáveis dessa forma: ${variavel}.
+
+const frase = `Comecei a frase e adicionei uma ${variavel}`;
+const outraFrase = `Fazer uma conta ${variavel1 - variavel2 / (variavel3 ** variavel4)}`;
+console.log(`Mais uma frase com o número ${numero}!`);
+
+STRINGS COM VÁRIAS LINHAS:
+--> Usar \n\ para pular linhas.
+console.log('Frase começa e\n\
+frase\n\
+continua');
+
+--> Melhor forma:
+console.log(`Frase começa e
+frase
+continua`);
+**********************************************************************
+DECISÕES COM O CÓDIGO:
+--> Atalho de teclado para achar emojis: "Windows ."
+if(algoÉtrue){
+	faça isso;
+} else if(AlgoéFalse){
+	faça isso;
+}
+**********************************************************************
+CONVERSÃO DE TIPOS E COERÇÃO:
+--> Conversão de tipo é quando convertemos manualmente o tipo de uma variável pra outro.
+--> Coerção é quando o Javascript converte automaticamente o tipo de uma variável pra outro.
+
+CONVERTER STRINGS PARA NÚMEROS: 
+--> Usar a função Number.
+Number(stringName);
+
+CONVERTER NÚMEROS PARA STRINGS:
+--> Usar a função String.
+String(number);
+**********************************************************************
+VALORES FALSOS: 0, '', undefined, null, NaN.
+--> Estes valores serão convertidos para "Falso" quando são transformados em Booleanos.
+
+VALORES VERDADEIROS: Qualquer número ou valor diferente dos valores falsos.
+--> Estes valores serão convertidos para "True" quando são transformados em Booleanos.
+
+CONVERTER VALORES PARA BOOLEAN:
+--> console.log(Boolean(valor));
+console.log(Boolean(0));
+
+--> Esse tipo de conversão é automaticamente feito pelo Javascript (Type coersion).
+**********************************************************************
+OPERADORES DE COMPARAÇÃO:
+--> Não é preciso criar um bloco de código abrindo e fechando chaves se a gente vai escrever só uma linha de comando.
+
+--> Ao invés de:
+if (age === 18){
+	console.log('You just became an adult');
+}
+
+--> Escrever:
+if (age === 18) console.log('You just became an adult');
+
+IMPORTANTE:
+=== --> 3 iguais comparam duas coisas, significa "é igual a".
+== --> 2 iguais fazem coersão de tipos
+
+'18' === 18 --> retorna false
+'18' == 18 --> retorna true (foi feita a conversão de '18' para 18)
+
+--> É SEMPRE MELHOR USAR === E CONVERTER O VALOR PRA ALGO ANTES DE FAZER A COMPARAÇÃO, PARA EVITAR BUGS.
+
+
+OPERADOR DIFERENTE DE:
+--> !== 
+if(12 !== 13) faça isso;
+**********************************************************************
+LER NÚMERO DO USUÁRIO NO CONSOLE: 
+--> const variavel = prompt('pergunta');
+**********************************************************************
+LÓGICA BOOLEANA BÁSICA: É um ramo da Ciência da Computação que usa true or false para resolver problemas lógicos.
+--> AND só é true se as duas afirmações forem verdadeiras
+--> OR só é false se as duas afirmações forem falsas
+
+AND: &&
+--> console.log(isso && aquilo);
+OR: ||
+--> console.log(isso || aquilo);
+NOT: !
+--> console.log(!isso);
+**********************************************************************
+DECLARAÇÃO DE SWITCH: Declaração de casos para diferentes situações.
+--> O código segue sendo executado até encontrar um 'break'.
+--> Tem que ter uma variável recebendo um valor que vai ser usado como parâmetro para rodar o switch de casos.
+--> O switch está sendo cada vez menos usado atualmente, mas é bom saber.
+--> Se eu usar o if else dá no mesmo.
+
+const caso = 'situação';
+
+switch(caso){
+   case 'situação':
+	faça isso;
+	break;
+   case 'situação 2':
+	faça isso;
+	break;
+   case 'situação 3':
+   case 'situação 4':
+	faça isso;
+	break;
+   default:
+	faça isso;
+}
+**********************************************************************
+Expressões produzem um valor, uma declaração não produz um valor.
+**********************************************************************
+OPERADOR CONDICIONAL TERNÁRIO: Também usado como o if else, mas serve pra somente uma linha de código.
+
+--> Bom para decisões pequenas e rápidas.
+--> Tem 3 partes: 1 condição, a parte do if e a parte do else.
+--> Tal condição ? faça isso : faça isso;
+--> É como se '?' fosse if, e o ':' fosse else.
+
+const age = 23;
+age >= 18 ? console.log("Isso") : console.log("Aquilo");
+
+const variavel = age >= 18 ? 'isso' : 'aquilo';
+console.log(variavel);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+**********************************************************************
