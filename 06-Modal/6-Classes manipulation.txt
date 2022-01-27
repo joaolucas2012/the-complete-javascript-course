@@ -1,0 +1,78 @@
+MANIPULANDO CLASSES: MODAL WINDOW
+--> Para poupar tempo, é bom criar variáveis que recebem elementos selecionados do HTML ou CSS:
+const modal = document.querySelector('.modal');
+--> Assim, toda vez que eu for chamar ou selecionar um elemento, dá pra escrever somente o nome da variável e já era.
+
+SELECIONAR VÁRIOS ELEMENTOS CUJA CLASSE TEM O MESMO NOME:
+--> Basta digitar document.querySelectorAll('.nomeDaClasse');
+--> Isso retorna uma lista com todos os elementos com a classe de mesmo nome.
+--> Podemos fazer uma iteração em loop nessa lista e manipular todos esses elementos.
+
+//////////////////////////////////////////////////////////////////////
+
+TRABALHANDO COM CLASSES:
+
+PARA REMOVER UMA CLASSE DE UM ELEMENTO:
+--> Basta chamar o elemento, depois digitar ".classList.remove('nomeDaClasseSemPonto');".
+--> O classList acessa a lista de classes com diferentes nomes que o elemento possui.
+--> O remove() é um método que remove uma classe, e recebe como argumento o nome da classe que desejamos remover.
+--> O nome da classe precisa ser passado entre aspas simples e sem o ponto final no começo.
+--> Se eu quiser remover mais de uma classe do mesmo elemento, basta passar como argumento o nome das classes sem o ponto final no começo, e separadas por vírgula:
+document.querySelector('.classeDoElemento').classList.remove('nomeDaClasseSemPonto', 'outraClasseSemPonto');
+
+PARA REMOVER UMA CLASSE DE UM ELEMENTO SEM DIGITAR MUITO:
+--> Dá para escrever apenas o nome da variável que contém o elemento buscado e depois o resto:
+modal.classList.remove('hidden');
+
+PARA ADICIONAR UMA CLASSE A UM ELEMENTO:
+--> O mesmo vale para a propriedade add():
+modal.classList.add('hidden');
+--> O método add() adiciona uma classe ao elemento.
+
+PARA SABER SE UM ELEMENTO POSSUI UMA CLASSE COM UM DETERMINADO NOME:
+modal.classList.contains('hidden');
+
+PARA NÃO REPETIR CÓDIGO:
+--> Se dois elementos precisarem executar a mesma função com o mesmo evento de clique, basta declarar a função separadamente e depois adicionar o eventListener, passando essa função como parâmetro:
+
+// Função para adicionar uma classe a um elemento
+const closeModal = () => {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+//////////////////////////////////////////////////////////////////////
+
+MANIPULAÇÃO UM EVENTO AO PRESSIONAR A TECLA "ESC":
+--> O evento da tecla "Esc" é um evento global, e por isso é preciso usar ele em todo o documento.
+
+EXISTEM 3 TIPOS DE EVENTOS PARA O TECLADO:
+--> KEYUP: Quando quando levantamos nosso dedo do teclado.
+--> KEYPRESS: É disparado continuamente enquanto mantemos nosso dedo em uma determinada tecla.
+--> KEYDOWN: É disparado assim que pressionarmos a tecla.
+--> Toda vez que pressionamos uma tecla em um evento assim, o Javascript cria um objeto com todas as informações desse evento, e toda vez que esse evento acontece, esse objeto é acessado.
+--> Para saber se a tecla pressionada foi a tecla "ESC" ou alguma outra, é preciso acessar as informações desse objeto assim que a tecla for pressionada.
+--> Para fazer isso, é necessário dar à função um parâmetro, que é o "e", de "event" (evento), mas pode ser qualquer letra, que isso significa a mesma coisa.
+--> Assim, toda vez que a função for chamada, o Javascript vai chamar a função com o objeto do evento como um argumento.
+
+
+PARA SABER O NOME DE CADA TECLA QUE EU PRESSIONO:
+--> Basta digitar document.addEventListener('keydown', function(e){
+    console.log(e.key);
+});
+--> Aqui, o e.key é o event, cuja propriedade "key" serve para exibir que tecla foi pressionada.
+
+
+PARA FAZER ALGO QUANDO UMA TECLA ESPECÍFICA É PRESSIONADA:
+document.addEventListener('keydown', function (e) {
+  // To know the name of the key pressed
+  console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
+--> Aqui o exemplo foi para a tecla "Escape", mas poderia ser qualquer outra tecla.
+--> O contains() é um método para saber se um elemento contém uma classe com determinado nome.
+--> Com o !, saberemos se o elemento não contém uma classe com um determinado nome.
