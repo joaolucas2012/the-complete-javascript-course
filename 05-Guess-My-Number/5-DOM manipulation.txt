@@ -1,0 +1,72 @@
+PROJECT #1: Guess my number!
+DOM MANIPULATION:
+
+--> Método para chamar elementos do HTML no Javascript:
+document.querySelector('.classeDoElemento');
+document.querySelector('#idDoElemento');
+
+--> Método para chamar texto dos elementos do HTML no Javascript:
+document.querySelector('.classeDoElemento').textContent;
+document.querySelector('#idDoElemento').textContent;
+//////////////////////////////////////////////////////////////////////
+
+O QUE É DOM E O QUE É DOM MANIPULATION:
+
+--> DOM é Document Object Model, que é representação estruturada de documentos HTML. Permite que o Javascript acesse elementos HTML e estilos para manipulá-los.
+--> Com isso é possível mudar texto, atributos HTML e até estilos CSS.
+--> Cada elemento do HTML é um objeto, presente em uma árvore.
+--> Cada nó folha da árvore representa um objeto, seu filho e assim por diante.
+--> O document fica no topo dessa árvore, e por isso, ele é o ponto de entrada para o DOM, por meio do document.querySelector(), e precisamos dele para selecionar outros elementos.
+--> Cada tag do HTML é um objeto do DOM, e é um filho do document.
+
+--> DOM e os métodos e propriedades do DOM são parte das Web APIs, que são bibliotecas que podem ser acessadas pelo Javascript.
+--> API é Aplication Program Interface.
+//////////////////////////////////////////////////////////////////////
+
+SELECIONANDO E MANIPULANDO ELEMENTOS:
+
+--> Mudar o valor de um elemento:
+document.querySelector('.message').textContent = 'Qualquer valor que eu quiser';
+
+--> Pegar o valor de um input:
+document.querySelector('.classeDoInput').value;
+//////////////////////////////////////////////////////////////////////
+
+HANDLING CLICK EVENTS:
+
+--> Isso serve para fazer os botões realizarem eventos quando são clicados, e para isso se usa o eventListener.
+--> O eventListener pega os argumentos, e um dos argumentos é uma função que faz algo quando o evento acontece, e isso é chamado de event handler, pois manipula o evento.
+
+--> Para usar o event listener, basta digitar "document.querySelector('.classeDoElemento').addEventListener('click', function(){})".
+--> Aqui, o addEventListener precisa de dois argumentos: o evento e a função que contém o código a ser executado quando o evento de click acontecer.
+//////////////////////////////////////////////////////////////////////
+
+IMPLEMENTANDO A LÓGICA DO JOGO:
+
+--> Sempre tratar o primeiro erro que é a falta de um valor no input.
+--> Pra isso se usa o código if(!nomeDaVariavel){façaIsso}.
+--> Se a variável for igual a 0, que é um valor falso, então o !variável fará o valor falso se tornar verdadeiro, daí o bloco de if será executado.
+
+--> Depois, basta fazer as outras tratativas de erros.
+//////////////////////////////////////////////////////////////////////
+
+MANIPULANDO ESTILOS CSS:
+
+--> Para mudar a cor de algo usando o DOM é só escrever document.querySelector('.classeDoElemento').style.propriedadeDoCss = 'valor';.
+
+--> Quando queremos escolher um elemento, e não uma classe ou id, basta escrever entre aspas simples o nome do elemento:
+document.querySelector('body')
+
+--> O style serve para acessar o CSS, e depois dele tem que escrever a propriedade do CSS que quero acessar, mas tem que ser em caixa alta se a propriedade tiver mais de duas palavras.
+document.querySelector('body').style.backgroundColor
+
+--> Depois vem o = e o valor que quero setar, e esse valor tem que estar dentro de aspas simples.
+document.querySelector('body').style.backgroundColor = 'white';
+//////////////////////////////////////////////////////////////////////
+
+REFATORANDO O NOSSO CÓDIGO: O PRINCÍPIO SECO
+
+--> É o ato de diminuir as linhas de código repetidas sem alterar o funcionamento do código como um todo.
+--> Pode ser feito criando uma nova lógica que englobe duas lógicas com códigos repetidos, assim o código vira um só, numa mesma lógica, apenas com o operador ternário (condição ? se sim faça isso : se não faça aquilo;).
+--> Pode ser feito também com o uso de funções, e cada função faz o uso de um código só. Toda vez que chamo a função, ela executa o mesmo código, só usando argumentos diferentes.
+//////////////////////////////////////////////////////////////////////
