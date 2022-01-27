@@ -1,0 +1,11 @@
+SITE PARA FAZER DIAGRAMAS DE SEQUÊNCIA:
+--> diagrams.net (https://app.diagrams.net/?src=about)
+
+OUTRA FORMA DE SELECIONAR UM ELEMENTO:
+--> Ao invés de usar querySelector(), eu posso usar também getElementById() ou getElementByClass();
+--> Supostamente a segunda e terceira opções rodam mais rápido quando é para procurar o elemento pelo id ou classe.
+//////////////////////////////////////////////////////////////////////
+
+MÉTODO TOGGLE(): Significa alternância.
+--> Se o elemento tiver a classe ou id igual ao que foi passado como argumento a esse método, esse método vai remover essa classe ou id dele.
+--> Se o elemento não tiver essa classe ou id, o método toggle() vai adicionar essa classe ou id ao elemento, por isso o nome toggle(alternância).
