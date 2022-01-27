@@ -1,0 +1,271 @@
+STRICT MODE: É um modo especial que podemos ativar no Javascript que facilita codar um código Javascript seguro.
+
+--> Basta apenas escrever uma string no começo do código.
+--> Isso tem que ser escrito antes de qualquer outra coisa.
+--> Isso evita a introdução de erros no código.
+
+'use strict';
+
+**********************************************************************
+FUNÇÕES: Blocos de código que podem ser reutilizados várias vezes.
+--> function nomeDaFunction(parametro){
+	algum código;
+}
+
+--> Para chamar a função, basta colocar o nome dela e passar os parâmetros, se ela tiver.
+nomeDaFunction(parametro);
+
+--> Para usar o valor retornado pela função, tem que armazenar o valor em uma variável.
+
+function fruitProcessor(apples, oranges) {
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+**********************************************************************
+DECLARAÇÃO DE FUNÇÃO VS EXPRESSÃO: Declarar uma função é normal, agora quando a função é declarada dentro de uma variável, é chamada de expressão, que retora um valor.
+
+--> Exemplo:
+const fazAlgo = function (argumento){
+	return issoAqui;
+}
+
+--> Chamar a função expressão:
+const resultado = fazAlgo(argumento);
+
+DIFERENÇA ENTRE DECLARAÇÃO DE FUNÇÃO E EXPRESSÃO:
+--> Função pode ser chamada antes ou depois dela ter sido declarada no código.
+--> Expressão só pode ser chamada depois de ter sido declarada.
+**********************************************************************
+ARROW FUNCTION: É uma forma especial de expressão que é menor e mais rápida de escrever.
+--> Não precisa das chaves "{}" e o return acontece implicitamente.
+
+--> Basta apenas escrever o argumento, depois a arrow (=>) e depois o que a gente quer retornar.
+birthYear => 2037 - birthYear;
+
+--> Depois, basta armazenar esse valor em uma variável.
+const nomeDaFuncao = birthYear => 2037 - birthYear;
+
+PARA CHAMAR A ARROW FUNCTION:
+const variavel = nomeDaFuncao(valor);
+
+FUNÇÕES COM MAIS CÓDIGO: Basta apenas adicionar chaves "{}" na frente da arrow "=>" e colocar as linhas de código.
+
+const algumaCoisa = (argumento1, argumento2) => {
+    linhaDeCodigo;
+    linhaDeCodigo;
+    return isso;
+}
+
+console.log(algumaCoisa(argumento1, argumento2));
+**********************************************************************
+CHAMAR FUNÇÕES DENTRO DE OUTRAS FUNÇÕES:
+--> É possível chamar uma função que consegue chamar outra função em suas linhas de código.
+**********************************************************************
+MOVER UMA LINHA PARA CIMA: alt + up.
+MOVER UMA LINHA PARA BAIXO: alt + down.
+**********************************************************************
+INTRODUÇÃO A VETORES: Basta apenas definir o tipo do vetor, o nome, e depois adicionar valores dentro de "[]".
+--> Exemplos de como implementar:
+const vetor = ['valor 1', 'valor2'];
+const vetor = new Array('valor1', 'valor2');
+
+--> Para logar no console:
+console.log(vetor);
+
+--> Para logar o valor de uma posição do vetor:
+--> console.log(vetor[posição]);
+console.log(vetor[2]);
+
+DESCOBRIR O TAMANHO DE UM VETOR: Usar a função ".length".
+console.log(vetor.length);
+console.log(vetor.length - 1);
+console.log(friends[friends.length - 1]);
+
+MUDAR UM VALOR DENTRO DO VETOR:
+--> vetor[posição] = 'valor'; OU vetor[posição] = valor.
+vetor[2] = 'Jay';
+--> Não é possível mudar os valores de todo o vetor de uma vez só.
+
+const firstName = 'Jonas';
+const jonas = [firstName, 'Schmedtmann', 20037 - 1991, 'teacher', friends];
+console.log(jonas);
+
+ADICIONAR UM VETOR DENTRO DE UM VETOR:
+--> Simplesmente posso adicionar números, strings e vetores dentro de um vetor;
+--> Basta colocar o nome de um vetor dentro do outro vetor;
+const outroVetor = '10', '56'];
+const vetor = [1, 'palavra', outroVetor];
+
+CHAMAR FUNÇÕES DENTRO DE UM VETOR:
+--> Basta criar um vetor e chamar funções dentro dele, passando argumentos.
+--> Os valores retornados serão adicionados nas posições do vetor.
+
+const função = valor => valor - 1;
+
+const vetor = [função(2), função(56)];
+console.log(vetor);
+**********************************************************************
+OPERADORES BÁSICOS DE VETORES (MÉTODOS):
+
+--> push(): isso adiciona elementos ao final do vetor.
+--> push(elementoQueQueremosAdicionarAoFimDoArray);
+array.push(2);
+array.push('palavra');
+array.push(função(4));
+
+--> unshift(): isso adiciona elementos ao início do vetor.
+-->  unshift(elementoQueQueremosAdicionarAoComeçoDoArray);
+array.unshift(2);
+array.unshift('palavra');
+array.unshift(função(4));
+
+--> pop(): isso remove elementos do final do vetor.
+--> pop();
+array.pop();
+--> Dá pra armazenar o elemento removido dentro de uma variável.
+const variavel = array.pop();
+
+--> shift(): isso remove elementos do início do vetor.
+--> shift();
+array.shift();
+--> Dá pra armazenar o elemento removido dentro de uma variável.
+const variavel = array.shift();
+
+--> indexOf(): isso mostra a posição dos elementos do vetor.
+array.indexOf('valorQueEstouBuscando');
+array.indexOf('Steven');
+array.indexOf('400');
+
+--> includes(): isso mostra se um elemento está ou não dentro do vetor.
+--> Retorna true se estiver, e false se não estiver.
+array.includes('valor');
+array.includes('valor') === true ? alert(`Está dentro`) : alert(`Não está dentro`);
+**********************************************************************
+INTRODUÇÃO A OBJETOS: 
+--> const nomeDaVariavel = {informaçõesdoobjeto}.
+--> Cada informação dentro do objeto é uma chave (key), e cada key tem um valor.
+--> Cada key é chamada de 'propriedade'.
+--> Os valores dentro do objeto não precisam estar em ordem como nos arrays.
+
+--> Exemplo de um objeto chamado Jonas que tem 5 propriedades (keys):
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  age: 2021 - 2000,
+  job: 'Bricklayer',
+  friends: ['Renato', 'Fred', 'Ribas']
+};
+**********************************************************************
+NOTAÇÃO DOT VS BRACKET: Essas notações servem para pegar valores das propriedades de um objeto.
+
+DOT NOTATION:
+--> objeto.propriedade;
+console.log(jonas.firstName);
+
+BRACKET NOTATION:
+--> objeto[propriedade];
+console.log(jonas['lastName']);
+--> Nesse caso é diferente, pois posso colocar operações dentro das chaves.
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+--> Aqui foi criada a variável nameKey, que recebeu a string 'Name';
+--> Depois foi usada a bracket notation pra logar uma propriedade do objeto apenas unindo a string 'first' com o valor 'Name', que está dentro da variável nameKey.
+--> Como essa concatenação forma a palavra 'firstName', isso puxa a propriedade 'firstName' do objeto Jonas, com a bracket notation.
+
+ADICIONAR UMA PROPRIEDADE AO OBJETO:
+--> Dot notation:
+jonas.location = 'Portugal';
+--> Bracket notation:
+jonas['twitter'] = '@jonasribeiro';
+console.logArray(jonas);
+**********************************************************************
+OBTECT METHODS: Podemos adicionar funções dentro de objetos.
+
+--> Exemplo:
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Ribeiro',
+  birthYear: 1991,
+  job: 'Bricklayer',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+
+   calcAge: function () {
+    logArray(this);
+    return 2037 - this.birthYear;
+  }
+};
+
+--> Toda função que é acoplada a um objeto é chamada de método.
+--> "this" aponta para o próprio objeto, this.nomeDaKey aponta para uma propriedade do objeto, this.nomeDaFuncao() chama a função da propriedade do objeto.
+
+CHAMAR UMA FUNÇÃO DENTRO DO OBJETO:
+--> Dot Notation:
+log(jonas.calcAge());
+--> Bracket Notation:
+log(jonas['calcAge']());
+**********************************************************************
+MUDAR A MESMA PALAVRA EM TODO O CÓDIGO QUE VIER DEPOIS: 
+--> Ctrl D e reescrever a palavra.
+**********************************************************************
+ITERAÇÃO: O LAÇO FOR
+--> O laço continua rodando enquanto a condição for verdadeira.
+
+for(let variavel = 0; variavel <= umNúmero; variavel++){
+	FaçaIsso;
+}
+**********************************************************************
+LOOPING ARRAYS, BREAKING AND CONTINUING:
+
+LOOPING ARRAYS:
+--> Para preencher um array com looping, exemplo:
+const array = [];
+for(let cont = 0; cont<tamanho-1; cont++){
+	array[cont] =  cont+1;
+}
+
+CONTINUING: 
+--> Para rodar um loop sob alguma condição específica. 
+--> Exemplo:
+if(typeof jonas[i] !== 'string') continue;
+--> Isso continua o loop somente fazendo operações com valores que não são strings.
+
+BREAKING:
+--> Para parar um loop sob alguma condição específica. 
+--> Exemplo:
+if(typeof jonas[i] === 'number') break;
+--> Isso para o loop somente se for encontrado um valor que seja um número.
+**********************************************************************
+LOOPING PARA TRÁS E LOOPS EM LOOPS:
+
+--> Para fazer loop para trás:
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(i, jonas[i]);
+}
+
+--> Para fazer loop dentro de loop:
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise} --------`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting weight repetition ${rep}`);
+  }
+}
+**********************************************************************
+O LOOP WHILE: 
+
+--> Roda enquanto a condição for verdadeira.
+--> Não esquecer de colocar rep++ no final!
+let rep = 1;
+while (rep <= 10) {
+  log(`Lifting weights repetition ${rep}`);
+  rep++;
+}
+**********************************************************************
