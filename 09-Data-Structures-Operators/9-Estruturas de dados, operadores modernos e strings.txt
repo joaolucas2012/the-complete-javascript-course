@@ -286,3 +286,27 @@ for (const [i, el] of menu.entries()) {
 
 console.log(...menu.entries());
 //////////////////////////////////////////////////////////////////////////////////
+
+// LITERAIS DE OBJETO APRIMORADOS
+
+--> Eu posso retirar um objeto de dentro de outro objeto, e declarar ele separadamente.
+--> Depois, basta escrever o nome do objeto separado dentro do objeto do qual ele foi retirado.
+
+const objetoUm = { 
+  dado1: '1';
+  dado2: '2';
+};
+
+const objetoDois = {
+  nome: 'nome',
+  data: 'data',
+  objetoUm,
+};
+--> Aqui, o objetoUm foi puxado pra dentro do objetoDois, pelo literal de objeto aprimorado.
+
+--> Também dá pra definir funções dentro de um objeto da seguinte forma:
+const objeto = {
+  dado1: 'dado1',
+  dado2: 'dado2',
+  funcaoFazAlgo(argumento){FaçaIsso},
+};
