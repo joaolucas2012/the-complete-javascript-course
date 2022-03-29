@@ -186,7 +186,7 @@ jonas.location = 'Portugal';
 jonas['twitter'] = '@jonasribeiro';
 console.logArray(jonas);
 **********************************************************************
-OBTECT METHODS: Podemos adicionar funções dentro de objetos.
+OBJECT METHODS: Podemos adicionar funções dentro de objetos.
 
 --> Exemplo:
 

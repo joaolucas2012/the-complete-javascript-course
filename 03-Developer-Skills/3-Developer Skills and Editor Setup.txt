@@ -30,7 +30,7 @@ SETAR UM ATALHO PARA O CONSOLE.LOG();:
 
 --> Toda vez que eu escrever "log", eu posso pressionar enter e isso vai ser reescrito por "console.log();".
 **********************************************************************
-INSTALANDO NODE.JS E CONDIGURANDO UM AMBIENTE DEV:
+INSTALANDO NODE.JS E CONFIGURANDO UM AMBIENTE DEV:
 
 --> Existem duas formas de recarregar a página na web automaticamente.
 --> A primeira é instalando a extensão Live Server no VS Code.

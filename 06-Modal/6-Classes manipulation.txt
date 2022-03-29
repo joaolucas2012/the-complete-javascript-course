@@ -76,3 +76,7 @@ document.addEventListener('keydown', function (e) {
 --> Aqui o exemplo foi para a tecla "Escape", mas poderia ser qualquer outra tecla.
 --> O contains() é um método para saber se um elemento contém uma classe com determinado nome.
 --> Com o !, saberemos se o elemento não contém uma classe com um determinado nome.
+
+PARA PEGAR UM VALOR COM O EVENT:
+--> É preciso usar o e.target.value.
+--> Isso pega o valor de um input, por exemplo.
